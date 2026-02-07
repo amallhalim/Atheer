@@ -4,7 +4,7 @@ export default function NavLinks() {
     return (
         <div style={{
             display: "flex", flexDirection: "column",
-            alignItems: "center", justifyContent: "center", border: "1px solid red"
+            alignItems: "flex-start", justifyContent: "flex-start", border: "1px solid red"
         }}>NavLinks
 
             <ul>

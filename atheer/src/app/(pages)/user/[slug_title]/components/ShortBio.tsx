@@ -9,15 +9,12 @@ export default function ShortBio() {
         }}>ShortBio
 
 
-            <div>
-                About
-                I’m a frontend engineer with a specialty in web accessibility, focused on building pixel-perfect, intuitive user interfaces. I enjoy working at the intersection of design and engineering, where great user experience meets robust, clean, and scalable code.
+            <div className='text-xl font-semibold leading-6'>
+                I’m a frontend engineer with 3+ years of professional experience, primarily working with React and modern JavaScript to build production-ready web applications.
 
-                Currently, I'm a senior frontend engineer at Klaviyo, where I work on the component library team to help maintain and evolve our design system. In this role, I lead accessibility efforts across components, tooling, and patterns, partnering closely with designers and engineers to ensure accessibility is part of our core architecture.
+                I’ve worked in a software house environment where I contributed to multiple client and internal projects. My work focuses on translating designs into high-quality user interfaces, improving performance, and ensuring applications are scalable and easy to maintain.
 
-                Previously, I’ve worked across a wide range of environments, from product studios to startups and large tech companies, including Apple, Starry Internet, and Upstatement. Alongside my professional work, I also created an online video course a few years ago which walks through building a real-world, API-driven application from scratch. These experiences have shaped how I think about building products that are both well-crafted and widely usable.
-
-                Outside of work, you can usually find me climbing, playing tennis, hanging out with my wife and two cats, or running around Hyrule searching for Korok seeds
+                I collaborate closely with designers, backend engineers, and product teams, and I have experience mentoring junior developers, conducting code reviews, and working within Agile teams. I’m always improving my skills and learning new tools to stay aligned with modern frontend best practices.
 
 
             </div>

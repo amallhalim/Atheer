@@ -3,16 +3,18 @@ import React from 'react'
 export default function SocialLinks() {
     return (
         <div style={{
-            display: "flex", flexDirection: "column",
-            alignItems: "center", justifyContent: "center", border: "1px solid green",
-            backgroundColor: "#f6e5bcff", padding: "10px"
-        }}>SocialLinks
+            display: "flex", flexDirection: "row",
+            // alignItems: "center", justifyContent: "center", border: "1px solid green",
+            // backgroundColor: "#f6e5bcff",
+        }}>
 
-            <ul>
-                <li>Facebook</li>
-                <li>Twitter</li>
-                <li>Instagram</li>
-                <li>Linkedin</li>
+            <ul style={{
+                display: "flex", flexDirection: "row",
+            }}>
+                <li className="pl-1">*Facebook</li>
+                <li className="pl-1">*Twitter</li>
+                <li className="pl-1">*Instagram</li>
+                <li className="pl-1">*Linkedin</li>
             </ul>
         </div>
     )

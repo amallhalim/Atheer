@@ -9,15 +9,17 @@ import SocialLinks from './components/SocialLinks'
 export default function UserProfile({ params }: { params: { slug_title: string } }) {
     return (
         <div>
-            <div style={{
-                backgroundColor: "white", color: "black",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                border: "3px solid red",
-                gap: "10px",
-                height: "100vh"
-            }}>
+            <div
+                className="p-[7%]"
+                style={{
+                    backgroundColor: "white", color: "black",
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    border: "3px solid red",
+                    gap: "10px",
+                    // height: "100vh",
+                }}>
                 {/* <h1 className="text-4xl font-bold">User: {params?.slug_title}</h1> */}
                 <div style={{
                     display: "flex", flexDirection: "column",
