@@ -10,7 +10,7 @@ export default function UserProfile({ params }: { params: { slug_title: string }
     return (
         <div>
             <div
-                className="px-[15%] pt-1 flex h-screen bg-blue-950 text-white"
+                className="px-[15%] pt-1 flex h-screen bg-slate-900 text-white"
 
                 style={{
                     border: "3px solid red",

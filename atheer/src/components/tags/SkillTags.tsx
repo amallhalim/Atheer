@@ -3,6 +3,6 @@ import React from 'react'
 
 export default function SkillTags({ skill }: { skill: string }) {
     return (
-        <div className='px-4 py-1 bg-green-700 text-white rounded-2xl text-sm'>{skill}</div>
+        <div className='px-4 py-1 bg-slate-800 text-cyan-400 rounded-2xl text-sm'>{skill}</div>
     )
 }
