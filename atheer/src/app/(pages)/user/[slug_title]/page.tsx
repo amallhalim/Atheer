@@ -10,42 +10,38 @@ export default function UserProfile({ params }: { params: { slug_title: string }
     return (
         <div>
             <div
-                className="p-[7%]"
-                style={{
-                    backgroundColor: "white", color: "black",
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "center",
-                    border: "3px solid red",
-                    gap: "10px",
-                    // height: "100vh",
-                }}>
-                {/* <h1 className="text-4xl font-bold">User: {params?.slug_title}</h1> */}
-                <div style={{
-                    display: "flex", flexDirection: "column",
-                    border: "1px solid red",
-                    gap: "10px",
-                    width: "45%"
+                className="px-[15%] pt-1 flex h-screen bg-blue-950 text-white"
 
-                }}>
-                    <NameSection />
-                    <NavLinks />
+                style={{
+                    border: "3px solid red",
+                }}
+            >
+                <div
+                    className=' flex flex-col flex-1 overflow-hidden justify-between py-[5%]'
+                    style={{
+                        border: "1px solid red",
+
+                    }}>
+                    <div className='space-y-16' >
+                        <NameSection />
+                        <NavLinks />
+                    </div>
                     <SocialLinks />
 
                 </div>
-                <div style={{
-                    display: "flex", flexDirection: "column",
-                    border: "1px solid red",
-                    gap: "10px",
-                    width: "55%"
-                }}>
+                <div
+                    className='flex-1 overflow-y-auto space-y-32'
+                    style={{
+                        border: "1px solid red",
+                        // gap: "10px",
+                    }}>
                     <ShortBio />
                     <ExperienceSection />
                     <Projects />
                 </div>
 
             </div>
-            <Copyright />
+            {/* <Copyright /> */}
         </div>
     )
 }

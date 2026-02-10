@@ -1,64 +1,71 @@
+"use client"
+import Image from 'next/image'
 import React from 'react'
+import harmony from "../../../../assets/harmony.png"
 
 export default function Projects() {
+    const projects = [
+        {
+            title: "Harmony — Cleaning Service Platform",
+            description: "Website, Admin Dashboard, Cleaner & Host Apps",
+            tech: "React, Material UI, Firebase",
+            link: "https://harmony.com",
+            image: harmony
+        },
+        {
+            title: "Harmony — Cleaning Service Platform",
+            description: "Website, Admin Dashboard, Cleaner & Host Apps",
+            tech: "React, Material UI, Firebase",
+            link: "https://harmony.com",
+            image: harmony
+        },
+        {
+            title: "Harmony — Cleaning Service Platform",
+            description: "Website, Admin Dashboard, Cleaner & Host Apps",
+            tech: "React, Material UI, Firebase",
+            link: "https://harmony.com",
+            image: harmony
+        },
+        {
+            title: "Harmony — Cleaning Service Platform",
+            description: "Website, Admin Dashboard, Cleaner & Host Apps",
+            tech: "React, Material UI, Firebase",
+            link: "https://harmony.com",
+            image: harmony
+        },
+        {
+            title: "Harmony — Cleaning Service Platform",
+            description: "Website, Admin Dashboard, Cleaner & Host Apps",
+            tech: "React, Material UI, Firebase",
+            link: "https://harmony.com",
+            image: harmony
+        },
+    ]
     return (
-        <div style={{
-            backgroundColor: "#8ac30eff", display: "flex", flexDirection: "column",
-            alignItems: "center", justifyContent: "center", border: "1px solid red"
-        }}>
-            88888888888Projects88888888888888
-            PROJECTS
-            Harmony — Cleaning Service Platform
+        <div
+            className='flex flex-col gap-10 '
+        >
+            {projects?.map((project, index) => {
+                return (
+                    <div key={index} className='flex flex-row  gap-5 ' >
+                        <div className='flex-1' >
+                            <Image src={project?.image} alt="test" className='border-xl hover:border-white hover:border-2' />
+                        </div>
+                        <div className='flex-3' >
+                            <h3 className='font-semibold text-xl cursor-pointer mb-3'
+                                onClick={() => { console.log("hello") }}>
+                                {project?.title}</h3>
 
-            Website, Admin Dashboard, Cleaner & Host Apps
 
-            Built the React frontend for the host website and admin dashboard
+                            <p>{project?.description}</p>
+                            <p>{project?.tech}</p>
+                            <a href={project?.link} target="_blank">{project?.link}</a>
+                        </div>
 
-            Implemented role-based access control
-
-            Improved UX across web and mobile platforms
-
-            Served as Scrum Master and mentored junior developers
-
-            Tech: React, Material UI, Firebase
-
-            QuickTask / Sydetasker — Service Platform Rebranding
-
-            Refactored and upgraded an existing React codebase
-
-            Handled full rebranding for the UK market
-
-            Integrated dynamic blogs using Gatsby
-
-            Ensured zero downtime during production migration
-
-            Tech: React, Gatsby, Material UI, Firebase
-
-            AntikSmart — Online Marketplace
-
-            Built SEO-friendly product and category pages (500+ items)
-
-            Implemented slug-based routing and structured metadata
-
-            Optimized performance through lazy loading
-
-            Added local save for incomplete listings
-
-            Tech: React, Node.js, Firebase
-
-            Comfy — MERN Ecommerce Platform (Graduation Project)
-
-            Designed and built a full-stack ecommerce application
-
-            Implemented authentication, cart, checkout, and admin dashboard
-
-            Enabled search, filtering, and sorting
-
-            Managed products, orders, and users
-
-            Tech: MongoDB, Express, React, Node.js
-            88888888888Projects88888888888888
-
+                    </div>
+                )
+            }
+            )}
         </div>
     )
 }
