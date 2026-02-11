@@ -24,3 +24,27 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+  /* Base link style */
+  .link {
+    @apply text-slate-400 hover:text-cyan-400 transition-colors duration-300 font-medium;
+  }
+  
+ 
+  /* Base nav-line style (the general class) */
+  .nav-line {
+    /* Layout & Base interaction */
+    @apply cursor-pointer hover:text-cyan-400;
+    
+    /* Line Default visuals  */
+    @apply before:content-[''] before:inline-block before:h-px before:w-8  before:bg-slate-500;
+    
+    /* & hover */
+    @apply  hover:before:w-16 hover:before:bg-cyan-400;
+  }
+
+  /* Active state for nav-line */
+  .nav-line.active {
+    @apply  text-cyan-400  before:w-16 before:bg-cyan-400;
+  }
+  

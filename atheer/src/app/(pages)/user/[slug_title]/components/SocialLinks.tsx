@@ -1,21 +1,24 @@
+"use client"
 import React from 'react'
 
 export default function SocialLinks() {
+    const socialLinks = [
+        { name: "Twitter", url: "https://twitter.com/" },
+        { name: "Facebook", url: "https://facebook.com/" },
+        { name: "Instagram", url: "https://instagram.com/" },
+        { name: "Linkedin", url: "https://linkedin.com/" },
+    ]
     return (
-        <div style={{
-            display: "flex", flexDirection: "row",
-            // alignItems: "center", justifyContent: "center", border: "1px solid green",
-            // backgroundColor: "#f6e5bcff",
-        }}>
 
-            <ul style={{
-                display: "flex", flexDirection: "row",
-            }}>
-                <li className="pl-1">*Facebook</li>
-                <li className="pl-1">*Twitter</li>
-                <li className="pl-1">*Instagram</li>
-                <li className="pl-1">*Linkedin</li>
-            </ul>
-        </div>
+        <ul
+            className='flex flex-row space-x-2'
+        >d
+
+            {socialLinks?.map((link) => {
+                return (
+                    <li key={link.name} onClick={() => window.open(link?.url)} className="pl-1 link">{link.name}</li>
+                )
+            })}
+        </ul>
     )
 }
