@@ -52,14 +52,14 @@ export default function Projects() {
                             <Image src={project?.image} alt="test" className='border-xl hover:border-white hover:border-2' />
                         </div>
                         <div className='flex-3' >
-                            <h3 className='font-semibold text-xl cursor-pointer mb-3'
+                            <h3 className='font-semibold text-xl cursor-pointer mb-3 link'
                                 onClick={() => { console.log("hello") }}>
                                 {project?.title}</h3>
 
 
                             <p>{project?.description}</p>
                             <p>{project?.tech}</p>
-                            <a href={project?.link} target="_blank">{project?.link}</a>
+                            <a className='link' href={project?.link} target="_blank">{project?.link}</a>
                         </div>
 
                     </div>

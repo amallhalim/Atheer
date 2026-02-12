@@ -27,7 +27,7 @@ body {
 
   /* Base link style */
   .link {
-    @apply text-slate-400 hover:text-cyan-400 transition-colors duration-300 font-medium;
+    @apply text-slate-200 hover:text-cyan-400 font-medium;
   }
   
  

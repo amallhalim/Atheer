@@ -16,7 +16,7 @@ export default function ExperienceSection() {
             <div className=' flex-3 border-amber-400'>
 
                 <span>Zetaton , Full Stack Developer</span>
-                <span>Milwaukee, WI, USA</span>
+                <p>Milwaukee, WI, USA</p>
 
                 •Full Stack Developer at a software house, contributing to multiple client and internal projects, primarily
                 on Frontend development while performing some backend tasks as needed.
