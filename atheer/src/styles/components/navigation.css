@@ -1,0 +1,28 @@
+.nav-line {
+  /* Layout & Base interaction */
+  @apply cursor-pointer hover:text-cyan-400;
+  
+  /* Line Default visuals  */
+  @apply before:content-[''] before:inline-block before:h-px before:w-8  before:bg-slate-500;
+  
+  /* & hover */
+  @apply  hover:before:w-16 hover:before:bg-cyan-400;
+}
+
+/* Active state for nav-line */
+.nav-line.active {
+  @apply  text-cyan-400  before:w-16 before:bg-cyan-400;
+}
+
+/* Base link style */
+.link {
+  @apply text-slate-400 hover:text-cyan-400 transition-colors duration-300 font-medium;
+}
+
+/* Active state for link:
+   Applies if the link itself has .active OR if it's inside a .nav-line.active
+*/
+.link.active,
+.nav-line.active .link {
+  @apply text-cyan-400;
+}

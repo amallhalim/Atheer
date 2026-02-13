@@ -1,0 +1,25 @@
+/* Base bullet list style */
+.list-custom {
+  @apply list-none ml-2 space-y-2 mb-6;
+}
+
+/* Custom bullet point */
+.list-custom li {
+  @apply relative pl-5 text-slate-400 leading-relaxed;
+}
+
+/* The actual bullet dot (pseudo-element) */
+.list-custom li::before {
+  content: "";
+  @apply absolute left-0 top-2.5 h-1.5 w-1.5 rounded-full bg-cyan-400 transition-all duration-300;
+}
+
+/* Hover effect on list item makes the dot larger */
+.list-custom li:hover::before {
+  @apply w-3 bg-cyan-300;
+}
+
+/* Text color on hover (optional) */
+.list-custom li:hover {
+  @apply text-slate-200;
+}

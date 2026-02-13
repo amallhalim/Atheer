@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import '../styles/components/navigation.css';
+@import '../styles/components/cards.css';
+@import '../styles/components/lists.css';
 
 :root {
   --background: #ffffff;
