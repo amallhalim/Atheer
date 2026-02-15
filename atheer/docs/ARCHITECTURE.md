@@ -41,6 +41,11 @@ A lightweight, scalable structure optimized for performance and developer experi
   npx shadcn-ui@latest add [component-name]
   ```
 
+## 🎨 Styling Strategy
+
+All visual decisions, including our **Theme Choice**, **Tailwind Integration**, and **CSS Conventions**, are documented in a unified guide:
+- **[Style & Theme Guidelines](./styling/GUIDELINES.md)**: The single source of truth for our Brittany Chiang-inspired aesthetic and technical CSS rules.
+
 ## 🔄 Data Lifecycle
 
 1. **Definitions**: Core data shapes are defined in `/src/types`.
