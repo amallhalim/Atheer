@@ -2,6 +2,7 @@
 @import '../styles/components/navigation.css';
 @import '../styles/components/cards.css';
 @import '../styles/components/lists.css';
+@import '../styles/layout.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -50,29 +51,7 @@
 }
 /* -------------------shadcn style ------------------*/
 
-  /* Base link style */
-  .link {
-    @apply text-slate-200 hover:text-cyan-400 font-medium;
-  }
-
-  /* Base nav-line style (the general class) */
-  .nav-line {
-    /* Layout & Base interaction */
-    @apply cursor-pointer hover:text-cyan-400;
-
-    /* Line Default visuals  */
-    @apply before:content-[''] before:inline-block before:h-px before:w-8  before:bg-slate-500;
-
-    /* & hover */
-    @apply  hover:before:w-16 hover:before:bg-cyan-400;
-  }
-
-  /* Active state for nav-line */
-  .nav-line.active {
-    @apply  text-cyan-400  before:w-16 before:bg-cyan-400;
-  }
-/* -------------------shadcn style ------------------*/
-  :root {
+:root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -107,7 +86,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-  .dark {
+.dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -141,14 +120,13 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-  @layer base {
+@layer base {
   * {
-    @apply border-border outline-ring/50;
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
-    @apply bg-background text-foreground;
   }
 }
+
 /* -------------------shadcn style ------------------*/
