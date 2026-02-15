@@ -21,7 +21,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
 
             {/* Gallery Section */}
-            <div className="flex flex-col gap-4 w-full lg:w-72 shrink-0">
+            <div className="flex flex-col  flex-1 gap-4 w-full lg:w-72 shrink-0">
                 {/* Main Featured Image */}
 
                 <HoverImage url={project.images[0]} title={project.title} />
@@ -51,7 +51,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             </div>
 
             {/* Content Section */}
-            <div className="flex flex-col flex-1 py-1">
+            <div className="flex flex-col flex-3 py-1">
                 <div className="flex flex-col gap-3">
                     <div className="flex items-center gap-2">
                         <span className="px-2 py-0.5 rounded text-[10px] font-bold tracking-widest bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 uppercase">

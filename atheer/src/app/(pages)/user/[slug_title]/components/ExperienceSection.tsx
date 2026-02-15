@@ -23,7 +23,11 @@ export default function ExperienceSection() {
     ];
 
     return (
-        <div className='flex flex-col gap-12'>
+        <div
+            className="relative flex flex-col gap-8 p-6 rounded-3xl 
+             hover:bg-slate-800/20 border border-transparent
+              hover:border-slate-700/50"
+        >
             {experiences.map((exp, index) => (
                 <div key={index} className='flex flex-col md:flex-row gap-4 md:gap-8 group'>
                     {/* Date Section */}
