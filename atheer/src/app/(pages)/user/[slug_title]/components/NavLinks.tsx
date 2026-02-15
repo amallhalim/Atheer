@@ -3,26 +3,28 @@
 import React, { useState } from 'react'
 
 export default function NavLinks() {
-    const links = ['About', 'Experience', 'Projects'];
-    const [activeLink, setActiveLink] = useState('About');
+    const links = [
+        { name: 'About', id: 'shortBio' },
+        { name: 'Experience', id: 'experienceSection' },
+        { name: 'Projects', id: 'projects' }
+    ];
+    const [active, setActive] = useState('About');
+
     return (
-
-        <ul className='space-y-2'>
-            {links.map((link) => {
-                return (
-                    <li key={link}
-                        className={`nav-line ${activeLink === link ? "active" : ""}`}
-                        onClick={() => setActiveLink(link)}
-                    >
-                        <span className="ml-2" >  {link}</span>
+        <nav aria-label="In-page jump links">
+            <ul className='space-y-6'>
+                {links.map(({ name, id }) => (
+                    <li key={id}>
+                        <a
+                            href={`#${id}`}
+                            onClick={() => setActive(name)}
+                            className={`nav-line flex items-center gap-4 text-xs font-bold uppercase  ${active === name ? "active" : "text-slate-500 hover:text-slate-200"}`}
+                        >
+                            {name}
+                        </a>
                     </li>
-                )
-            })}
-
-
-
-        </ul >
-
-
+                ))}
+            </ul>
+        </nav>
     )
 }

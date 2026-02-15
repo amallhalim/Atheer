@@ -6,9 +6,7 @@ import ExperienceSection from './components/ExperienceSection'
 import Projects from './components/Projects'
 import Copyright from './components/Copyright'
 import SocialLinks from './components/SocialLinks'
-import { Brain, Radiation } from 'lucide-react'
-import { Badge } from '@/components/ui/badge'
-export default function UserProfile({ params }: { params: { slug_title: string } }) {
+export default function UserProfile() {
     return (
         <div>
             <div className="px-[15%] pt-1 flex h-screen bg-slate-900 text-white" >
@@ -19,7 +17,7 @@ export default function UserProfile({ params }: { params: { slug_title: string }
                     </div>
                     <SocialLinks />
                 </div>
-                <div className=' flex-1 overflow-y-auto space-y-32 py-[5%]'
+                <div className=' flex-1 overflow-y-auto space-y-32 py-[5%] '
                     style={{
                         scrollbarWidth: "none",
                     }}>

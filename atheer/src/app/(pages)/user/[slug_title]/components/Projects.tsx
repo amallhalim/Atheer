@@ -89,7 +89,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
 export default function Projects() {
     return (
-        <div className="flex flex-col gap-4">
+        <div id="projects" className="flex flex-col gap-4 scroll-mt-24">
             {PROJECTS.map((project, index) => (
                 <ProjectCard key={index} project={project} />
             ))}
