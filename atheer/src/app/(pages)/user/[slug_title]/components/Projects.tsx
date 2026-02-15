@@ -1,70 +1,98 @@
 "use client"
 import Image from 'next/image'
 import React from 'react'
-import harmony from "../../../../assets/harmony.png"
+import HoverImage from '@/components/image/HoverImage';
+import PROJECTS from '@/staticData/Projects';
+import { Project } from '@/types';
 
-export default function Projects() {
-    const projects = [
-        {
-            title: "Harmony — Cleaning Service Platform",
-            description: "A comprehensive platform connecting cleaners with hosts. Features include real-time booking, admin dashboard, and separate apps for cleaners and hosts.",
-            tech: ["React", "Material UI", "Firebase"],
-            link: "https://harmony.com",
-            image: harmony
-        },
-        {
-            title: "QuickTask – Project Management Tool",
-            description: "A streamlined project management tool designed for agile teams. Includes Kanban boards, sprint planning, and team analytics.",
-            tech: ["Next.js", "Tailwind CSS", "Supabase"],
-            link: "https://quicktask.com",
-            image: harmony
-        },
-        {
-            title: "AntikSmart – E-commerce for Antiques",
-            description: "Niche e-commerce platform for high-value antiques with auction functionality and verified seller profiles.",
-            tech: ["React", "Node.js", "MongoDB"],
-            link: "https://antiksmart.com",
-            image: harmony
-        }
-    ]
+
+
+const ProjectCard = ({ project }: { project: Project }) => {
+    const hasMultipleImages = project.images.length > 1;
 
     return (
-        <div className='flex flex-col gap-12'>
-            {projects.map((project, index) => (
-                <div key={index} className='flex flex-col md:flex-row gap-6  cursor-default border-amber-300 border-2 '>
-                    <Image
-                        src={project.image}
-                        alt={project.title}
-                        className='group-hover:scale-105  flex-1 h-20 rounded-lg'
-                        objectFit='cover'
-                    />
+        <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex flex-col lg:flex-row gap-8 p-6 rounded-3xl transition-all duration-500 hover:bg-slate-800/20 border border-transparent hover:border-slate-700/50"
+        >
+            {/* Subtle glow effect on hover */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
 
-                    <div className='flex-2 flex flex-col justify-between'>
-                        <div>
-                            <h3 className='font-bold text-xl text-slate-100  mb-2 group-hover:text-cyan-500  flex items-center gap-2'>
-                                {project.title}
-                            </h3>
+            {/* Gallery Section */}
+            <div className="flex flex-col gap-4 w-full lg:w-72 shrink-0">
+                {/* Main Featured Image */}
 
-                            <p className='text-slate-400  mb-4 text-sm'>
-                                {project.description}
-                            </p>
+                <HoverImage url={project.images[0]} title={project.title} />
+                {/* Dynamic Secondary Thumbnails */}
+                {hasMultipleImages && (
+                    <div className="grid grid-cols-4 gap-2">
+                        {project.images.slice(1, 4).map((img, i) => (
+                            <div
+                                key={i}
+                                className="  relative h-15 rounded-xl 
+                       
+                                  "
+                            >
 
-                            <div className='flex flex-wrap gap-2 mb-4'>
-                                {project.tech.map((t) => (
-                                    <span key={t} className='text-xs font-medium px-2 py-1 rounded bg-cyan-500/300 text-cyan-300'>
-                                        {t}
-                                    </span>
-                                ))}
+                                <HoverImage url={img} title={project.title} />
                             </div>
-                        </div>
-
-                        {/* Link (Optional, if you want a distinct button, but the whole card title is hoverable now) */}
-                        {/* <a href={project.link} target="_blank" rel="noopener noreferrer" className='inline-flex items-center text-sm font-medium text-slate-500 hover:text-cyan-500 transition-colors'>
-                            Visit Project &rarr;
-                        </a> */}
+                        ))}
+                        {project.images.length > 4 && (
+                            <div className=" bg-slate-800/80 
+                            backdrop-blur-sm rounded-xl flex items-center 
+                            justify-center  font-bold text-slate-400 ">
+                                +{project.images.length - 4}
+                            </div>
+                        )}
                     </div>
+                )}
+            </div>
+
+            {/* Content Section */}
+            <div className="flex flex-col flex-1 py-1">
+                <div className="flex flex-col gap-3">
+                    <div className="flex items-center gap-2">
+                        <span className="px-2 py-0.5 rounded text-[10px] font-bold tracking-widest bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 uppercase">
+                            {project.year}
+                        </span>
+                        <span className="text-[10px] font-medium text-slate-500 uppercase tracking-wider">
+                            — {project.type}
+                        </span>
+                    </div>
+
+                    <h3 className="font-bold text-2xl text-slate-100 group-hover:text-cyan-400 transition-colors flex items-center gap-2 tracking-tight">
+                        {project.title}
+
+                    </h3>
+
+                    <p className="text-slate-400/90 text-base leading-relaxed mb-4 max-w-2xl font-light">
+                        {project.description}
+                    </p>
                 </div>
+
+                <div className="mt-auto flex flex-wrap gap-2">
+                    {project.tech.map((t) => (
+                        <span
+                            key={t}
+                            className="text-[11px] font-medium px-3 py-1 rounded-lg bg-slate-800/40 text-slate-400 border border-slate-700/30 group-hover:border-cyan-500/30 group-hover:text-cyan-300 transition-all duration-300 transform group-hover:translate-y-[-2px]"
+                        >
+                            {t}
+                        </span>
+                    ))}
+                </div>
+            </div>
+        </a>
+    );
+};
+
+export default function Projects() {
+    return (
+        <div className="flex flex-col gap-4">
+            {PROJECTS.map((project, index) => (
+                <ProjectCard key={index} project={project} />
             ))}
         </div>
-    )
+    );
 }
