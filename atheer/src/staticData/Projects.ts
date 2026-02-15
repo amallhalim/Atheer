@@ -4,46 +4,38 @@ import harmony from "./../app/assets/harmony.png";
 
 const PROJECTS: Project[] = [
     {
-        title: "Harmony — Cleaning Service Platform",
-        description: "A comprehensive platform connecting cleaners with hosts. Features include real-time booking, admin dashboard, and separate apps for cleaners and hosts.",
-        tech: ["React", "Material UI", "Firebase"],
-        link: "https://harmony.com",
-        images: [harmony], // Example multiple images
-        year: "2024",
-        type: "Web Application"
-    }, {
-        title: "Harmony — Cleaning Service Platform",
-        description: "A comprehensive platform connecting cleaners with hosts. Features include real-time booking, admin dashboard, and separate apps for cleaners and hosts.",
-        tech: ["React", "Material UI", "Firebase"],
-        link: "https://harmony.com",
-        images: [harmony, harmony], // Example multiple images
-        year: "2024",
+        title: "Harmony – Cleaning Service Platform",
+        description: "Engineered the React.js Frontend for the host website and Admin Dashboard, implementing role-based access controls. Served as Scrum Master, coordinating sprints to ensure timely delivery.",
+        tech: ["React.js", "Material-UI", "Firebase"],
+        link: "https://harmony.com", // Placeholder - adjust if real link known
+        images: [harmony],
+        year: "2023",
         type: "Web Application"
     },
     {
-        title: "Harmony — Cleaning Service Platform",
-        description: "A comprehensive platform connecting cleaners with hosts. Features include real-time booking, admin dashboard, and separate apps for cleaners and hosts.",
-        tech: ["React", "Material UI", "Firebase"],
-        link: "https://harmony.com",
-        images: [harmony, harmony, harmony], // Example multiple images
-        year: "2024",
-        type: "Web Application"
-    },
-    {
-        title: "QuickTask – Project Management Tool",
-        description: "A streamlined project management tool designed for agile teams. Includes Kanban boards, sprint planning, and team analytics.",
-        tech: ["Next.js", "Tailwind CSS", "Supabase"],
+        title: "QuickTask / Sydetasker Rebranding",
+        description: "Managed Localization and rebranding for the UK market. Integrated static content and dynamic blogs using Gatsby and React.js while ensuring zero downtime for production.",
+        tech: ["React.js", "Gatsby", "Material-UI", "Firebase"],
         link: "https://quicktask.com",
-        images: [harmony, harmony, harmony, harmony, harmony, harmony],
+        images: [harmony],
         year: "2023",
         type: "SaaS Product"
     },
     {
-        title: "AntikSmart – E-commerce for Antiques",
-        description: "Niche e-commerce platform for high-value antiques with auction functionality and verified seller profiles.",
-        tech: ["React", "Node.js", "MongoDB"],
+        title: "Antiquesmart – Online Marketplace",
+        description: "Implemented slug-based URLs for SEO-friendly product pages. Configured markup schema and Helmet tags for improved SEO compliance. Optimized performance via lazy-loading.",
+        tech: ["React.js", "Node.js", "Firebase", "SEO"],
         link: "https://antiksmart.com",
-        images: [harmony, harmony, harmony, harmony, harmony, harmony],
+        images: [harmony],
+        year: "2023",
+        type: "E-Commerce"
+    },
+    {
+        title: "Comfy – Furniture Ecommerce (MERN)",
+        description: "Built a full-stack furniture platform as a capstone project. Features secure authentication, shopping cart, product catalog, and an efficient Admin Dashboard for management.",
+        tech: ["MongoDB", "Express.js", "React.js", "Node.js", "CSS3", "Bootstrap"],
+        link: "https://github.com/amallhalim/comfy",
+        images: [harmony],
         year: "2023",
         type: "E-Commerce"
     }

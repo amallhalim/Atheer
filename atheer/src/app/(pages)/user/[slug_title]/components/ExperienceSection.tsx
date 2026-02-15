@@ -2,23 +2,21 @@ import SkillTags from '@/components/tags/SkillTags';
 import React from 'react';
 
 export default function ExperienceSection() {
-    const skills = ["javascript", "react", "node.js", "firebase", "material-ui", "ant design", "html", "css", "git", "github", "agile", "scrum", "jenkins"] as const;
 
     const experiences = [
         {
             date: "08/2023 – Present",
             title: "Full Stack Developer",
             company: "Zetaton",
-            location: "Milwaukee, WI, USA",
+            location: "Milwaukee, WI, USA (Remote)",
             description: [
-                "Contribue to multiple client and internal projects, primarily on Frontend development while performing some backend tasks as needed.",
-                "Create and maintain Frontend applications using React, Material-UI, Ant Design, with supportive backend work using Node.js and Firebase.",
-                "Guide development for projects like QuickTask, TubleTick, AntikSmart, and Harmony, implementing UI/UX enhancements, responsive design, and Single-Page Applications (SPA) architecture.",
-                "Mentor junior developers, conduct code reviews, and maintain scalable, maintainable Frontend architecture within Agile teams.",
-                "Optimize application performance by lazy-loading components, reducing page load times, and removing unused packages.",
-                "Support manual and Jenkins-based releases and deployments, maintaining technical documentation.",
-                "Contribute to the hiring process by reviewing candidate applications and participating in technical interviews."
-            ]
+                "Contribute to multiple client and internal projects, primarily on Frontend development while performing backend tasks as needed.",
+                "Create and maintain applications using React, Material-UI, Ant Design, Node.js, and Firebase.",
+                "Guided development for projects like QuickTask, TubleTick, AntikSmart, and Harmony, implementing UI/UX enhancements and SPA architecture.",
+                "Mentored 4 junior developers, conducted code reviews, and maintained scalable Frontend architecture within Agile teams.",
+                "Optimized performance by lazy-loading components and removing unused packages, improving page load times.",
+                "Supported Jenkins-based releases and contributed to the technical hiring and onboarding process."
+            ], skills: ["javascript", "react", "node.js", "firebase", "material-ui", "ant design", "html", "css", "git", "github", "agile", "scrum", "jenkins"]
         }
     ];
 
@@ -51,7 +49,7 @@ export default function ExperienceSection() {
                         </ul>
 
                         <div className="flex flex-wrap gap-2">
-                            {skills.map((skill) => (
+                            {exp.skills.map((skill) => (
                                 <SkillTags key={skill} skill={skill} />
                             ))}
                         </div>
