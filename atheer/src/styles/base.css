@@ -1,0 +1,41 @@
+/* 
+  🏗️ BASE STYLES & GLOBAL DEFAULTS
+  This file handles the "Global Rules" for the whole site. 
+  It applies styles directly to HTML tags without needing classes.
+*/
+
+@layer base {
+  /* 1. SMOOTHING: Makes transitions feel silky and text look sharp */
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* 2. BORDERS & RINGS: Default technical rules for Shadcn and layout */
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  /* 3. BODY & SELECTION: Sets page basics and that "Teal" highlight color */
+  body {
+    @apply bg-background text-foreground selection:bg-primary/20 selection:text-primary;
+  }
+
+  /* --- Global Improvements (The "Invisible UX") --- */
+
+  /* ACCESSIBILITY: A clean Teal ring for keyboard users (Tab key) */
+  :focus-visible {
+    @apply outline-2 outline-primary outline-offset-4;
+  }
+
+  /* IMAGES: Keeps them reactive and dims them slightly at night */
+  img {
+    max-width: 100%;
+    @apply block h-auto;
+  }
+
+  .dark img {
+    @apply opacity-90 transition-opacity duration-300 hover:opacity-100;
+  }
+}

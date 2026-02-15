@@ -1,0 +1,13 @@
+/*
+  💎 THE CONSTANT FOUNDATION
+  These values stay exactly the same in both Light and Dark mode.
+  Use this file for sizes, radii, and fixed brand colors that should never change.
+*/
+
+:root {
+  /* --- Layout & Shape --- */
+  --radius: 0.625rem;
+
+  /* --- Static Brand Colors --- */
+  /* Add other constant colors (like Brand Gold, pure Black, etc.) here */
+}
