@@ -1,0 +1,29 @@
+/* Spotlight Effect Styles (Brittany Chiang Inspiration) */
+.spotlight {
+    background: radial-gradient(
+      600px at var(--mouse-x) var(--mouse-y), /* Coordinates provided as Global CSS Variables by Spotlight.tsx */
+      theme('colors.blue.500 / 15%'),
+      transparent 80%
+    );
+
+    /* --- Visual & Interaction Rules --- */
+    
+    /* 1. INTERACTION: 'pointer-events-none' (The "Invisible Glass")
+          What: Makes the element "click-through."
+          Why: Since the spotlight covers the screen, without this, you couldn't click buttons underneath. 
+          It tells the browser: "Ignore me and click the thing behind me." */
+    
+    /* 2. POSITION: 'fixed' (The "Glasses" Analogy)
+          What: Pins it to the browser window (viewport).
+          Why: Mouse coordinates (clientX/Y) are relative to the window, not the page. 
+          If we used 'absolute' or the body size, the light would "scroll away" and get lost. 
+          'fixed' ensures the canvas always sits perfectly in front of your eyes. */
+    
+    /* 3. SIZING: 'inset-0' (The "4-Way Anchor")
+          What: Pins all 4 sides to the edges of the window, forcing the box to stretch full-screen.
+          Analogy: It tells the browser "I want to touch all 4 walls of my home at the same time." */
+    
+    /* 4. LAYERING: 'z-30' places it on a middle layer—above the background but below menus/popups. */
+        
+    @apply pointer-events-none fixed inset-0 z-30 transition-opacity duration-300;
+}
