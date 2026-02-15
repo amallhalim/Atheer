@@ -16,7 +16,7 @@
 
 /* Base link style */
 .link {
-  @apply text-slate-400 hover:text-cyan-400 transition-colors duration-300 font-medium;
+  @apply cursor-pointer text-slate-400 hover:text-cyan-400 transition-colors duration-300 transform font-medium;
 }
 
 /* Active state for link:

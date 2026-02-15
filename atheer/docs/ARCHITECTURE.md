@@ -24,6 +24,15 @@ A lightweight, scalable structure optimized for performance and developer experi
   <ArrowUpRight className="w-4 h-4" />
   ```
 
+### [React Icons](https://react-icons.github.io/react-icons/) (Brand Icons)
+- **Why**: Handles **official brand logos** that are being deprecated in Lucide (e.g., Instagram, X/Twitter). It ensures we use accurate, high-quality social brand identities.
+- **Usage**: Use optimized imports from the respective collection (e.g., `si` for SimpleIcons).
+  ```tsx
+  import { SiInstagram } from "react-icons/si";
+  ```
+
+> **Note on Multiple Icon Packages**: We use both **Lucide** and **React Icons** to maintain a "smart" separation of concerns. Lucide handles our consistent UI utility icons (arrows, menus). However, **Lucide does not support brand icons** (like Instagram, X, etc.) as they are outside its scope. Therefore, we use React Icons to provide official, high-fidelity brand logos. Thanks to Next.js tree-shaking, this dual-library approach does not negatively impact our bundle size.
+
 ### [shadcn/ui](https://ui.shadcn.com/) (UI Components)
 - **Why**: Low-level accessibility (Radix UI) combined with full styling control via Tailwind CSS. 
 - **Storage**: Components reside in **`/src/components/ui`**. These are "owned" by the shadcn CLI but intended for manual customization if needed.
