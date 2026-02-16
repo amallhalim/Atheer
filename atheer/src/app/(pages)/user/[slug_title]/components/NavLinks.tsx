@@ -18,7 +18,7 @@ export default function NavLinks() {
                         <a
                             href={`#${id}`}
                             onClick={() => setActive(name)}
-                            className={`nav-line flex items-center gap-4 text-xs font-bold uppercase  ${active === name ? "active" : "text-slate-500 hover:text-slate-200"}`}
+                            className={`nav-line flex items-center gap-4 text-xs font-bold uppercase ${active === name ? "active" : "text-muted-foreground hover:text-foreground"}`}
                         >
                             {name}
                         </a>

@@ -1,22 +1,22 @@
 .nav-line {
   /* Layout & Base interaction */
-  @apply cursor-pointer hover:text-cyan-400;
+  @apply cursor-pointer hover:text-primary;
   
   /* Line Default visuals  */
   @apply before:content-[''] before:inline-block before:h-px before:w-8  before:bg-slate-500;
   
   /* & hover */
-  @apply  hover:before:w-16 hover:before:bg-cyan-400;
+  @apply  hover:before:w-16 hover:before:bg-primary;
 }
 
 /* Active state for nav-line */
 .nav-line.active {
-  @apply  text-cyan-400  before:w-16 before:bg-cyan-400;
+  @apply  text-primary  before:w-16 before:bg-primary;
 }
 
 /* Base link style */
 .link {
-  @apply cursor-pointer text-slate-400 hover:text-cyan-400 transition-colors duration-300 transform font-medium;
+  @apply cursor-pointer text-slate-400 hover:text-primary transition-colors duration-300 transform font-medium;
 }
 
 /* Active state for link:
@@ -24,5 +24,5 @@
 */
 .link.active,
 .nav-line.active .link {
-  @apply text-cyan-400;
+  @apply text-primary;
 }

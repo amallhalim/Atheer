@@ -15,7 +15,7 @@ const BIO_ITEMS =
 
 export default function ShortBio() {
     return (
-        <div id="shortBio" className='flex flex-col gap-4 text-slate-400 leading-relaxed text-base md:text-lg scroll-mt-24'>
+        <div id="shortBio" className='flex flex-col gap-4 text-muted-foreground leading-relaxed text-base md:text-lg scroll-mt-24'>
             <p>
                 I’m a <ExternalLink name={BIO_ITEMS.role.name} url={BIO_ITEMS.role.url} /> with over 3 years of experience building scalable, responsive web applications using
                 <ExternalLink name={BIO_ITEMS.react.name} url={BIO_ITEMS.react.url} />, Material-UI, and Ant Design.

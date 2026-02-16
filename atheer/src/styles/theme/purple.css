@@ -1,0 +1,47 @@
+/* 🟣 PURPLE THEME */
+[data-theme='purple'] {
+  /* --- Core Colors --- */
+  --background: #0d0a14;
+  --foreground: #faf5ff;
+
+  /* --- Surface Colors --- */
+  --card: #161225;
+  --card-foreground: #faf5ff;
+  --popover: #0d0a14;
+  --popover-foreground: #faf5ff;
+
+  /* --- Action Colors --- */
+  --primary: #c084fc;
+  --primary-foreground: #3b0764;
+  --secondary: #241a3a;
+  --secondary-foreground: #faf5ff;
+  --accent: #3b0764;
+  --accent-foreground: #c084fc;
+  --destructive: #ef4444;
+
+  /* --- UI Elements --- */
+  --muted: #161225;
+  --muted-foreground: #7e22ce;
+  --border: #3b0764;
+  --input: #3b0764;
+  --ring: #c084fc;
+
+  /* --- Specialized Components --- */
+  --chart-1: #c084fc;
+  --chart-2: #d8b4fe;
+  --chart-3: #e9d5ff;
+  --chart-4: #f3e8ff;
+  --chart-5: #faf5ff;
+
+  --sidebar: #161225;
+  --sidebar-foreground: #faf5ff;
+  --sidebar-primary: #c084fc;
+  --sidebar-primary-foreground: #3b0764;
+  --sidebar-accent: #241a3a;
+  --sidebar-accent-foreground: #c084fc;
+  --sidebar-border: #3b0764;
+  --sidebar-ring: #c084fc;
+
+  /* --- Feature Variables --- */
+  --spotlight-glow: 192, 132, 252;
+}

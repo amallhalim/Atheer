@@ -69,6 +69,9 @@ export const metadata: Metadata = {
 };
 
 import Spotlight from "@/components/layout/Spotlight";
+import ThemeSelector from "@/components/layout/ThemeSelector";
+
+
 
 export default function RootLayout({
   children,
@@ -76,10 +79,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="ltr">
+    <html lang="en" dir="ltr" data-theme="dark" >
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ThemeSelector />
         <Spotlight />
         {children}
       </body>

@@ -11,12 +11,12 @@
 /* The actual bullet dot (pseudo-element) */
 .list-custom li::before {
   content: "";
-  @apply absolute left-0 top-2.5 h-1.5 w-1.5 rounded-full bg-cyan-400 transition-all duration-300;
+  @apply absolute left-0 top-2.5 h-1.5 w-1.5 rounded-full bg-primary transition-all duration-300;
 }
 
 /* Hover effect on list item makes the dot larger */
 .list-custom li:hover::before {
-  @apply w-3 bg-cyan-300;
+  @apply w-3 bg-primary/80;
 }
 
 /* Text color on hover (optional) */

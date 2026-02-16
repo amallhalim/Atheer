@@ -9,7 +9,7 @@ import SocialLinks from './components/SocialLinks'
 export default function UserProfile() {
     return (
         <div>
-            <div className="px-[15%] pt-1 flex h-screen bg-slate-900 text-white" >
+            <div className="px-[15%] pt-1 flex h-screen bg-background text-foreground transition-colors duration-500" >
                 <div className=' flex flex-col flex-1 overflow-hidden justify-between py-[5%]' >
                     <div className='space-y-16' >
                         <NameSection />

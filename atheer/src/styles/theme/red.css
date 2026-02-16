@@ -1,0 +1,47 @@
+/* 🔴 RED THEME */
+[data-theme='red'] {
+  /* --- Core Colors --- */
+  --background: #0f0a0a;
+  --foreground: #fef2f2;
+
+  /* --- Surface Colors --- */
+  --card: #1a1414;
+  --card-foreground: #fef2f2;
+  --popover: #0f0a0a;
+  --popover-foreground: #fef2f2;
+
+  /* --- Action Colors --- */
+  --primary: #f87171;
+  --primary-foreground: #450a0a;
+  --secondary: #2d2626;
+  --secondary-foreground: #fef2f2;
+  --accent: #450a0a;
+  --accent-foreground: #f87171;
+  --destructive: #ef4444;
+
+  /* --- UI Elements --- */
+  --muted: #1a1414;
+  --muted-foreground: #991b1b;
+  --border: #450a0a;
+  --input: #450a0a;
+  --ring: #f87171;
+
+  /* --- Specialized Components --- */
+  --chart-1: #f87171;
+  --chart-2: #fb7185;
+  --chart-3: #fda4af;
+  --chart-4: #fecaca;
+  --chart-5: #fee2e2;
+
+  --sidebar: #1a1414;
+  --sidebar-foreground: #fef2f2;
+  --sidebar-primary: #f87171;
+  --sidebar-primary-foreground: #450a0a;
+  --sidebar-accent: #2d2626;
+  --sidebar-accent-foreground: #f87171;
+  --sidebar-border: #450a0a;
+  --sidebar-ring: #f87171;
+
+  /* --- Feature Variables --- */
+  --spotlight-glow: 248, 113, 113;
+}

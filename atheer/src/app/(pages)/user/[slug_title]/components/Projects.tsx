@@ -15,10 +15,10 @@ const ProjectCard = ({ project }: { project: Project }) => {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex flex-col lg:flex-row gap-8 p-6 rounded-3xl transition-all duration-500 hover:bg-slate-800/20 border border-transparent hover:border-slate-700/50"
+            className="group relative flex flex-col lg:flex-row gap-8 p-6 rounded-3xl transition-all duration-500 hover:bg-muted/30 border border-transparent hover:border-border"
         >
             {/* Subtle glow effect on hover */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
 
             {/* Gallery Section */}
             <div className="flex flex-col  flex-1 gap-4 w-full lg:w-72 shrink-0">
@@ -31,18 +31,14 @@ const ProjectCard = ({ project }: { project: Project }) => {
                         {project.images.slice(1, 4).map((img, i) => (
                             <div
                                 key={i}
-                                className="  relative h-15 rounded-xl 
-                       
-                                  "
+                                className="relative h-15 rounded-xl"
                             >
 
                                 <HoverImage url={img} title={project.title} />
                             </div>
                         ))}
                         {project.images.length > 4 && (
-                            <div className=" bg-slate-800/80 
-                            backdrop-blur-sm rounded-xl flex items-center 
-                            justify-center  font-bold text-slate-400 ">
+                            <div className="bg-muted/80 backdrop-blur-sm rounded-xl flex items-center justify-center font-bold text-muted-foreground">
                                 +{project.images.length - 4}
                             </div>
                         )}
@@ -54,20 +50,20 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <div className="flex flex-col flex-3 py-1">
                 <div className="flex flex-col gap-3">
                     <div className="flex items-center gap-2">
-                        <span className="px-2 py-0.5 rounded text-[10px] font-bold tracking-widest bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 uppercase">
+                        <span className="px-2 py-0.5 rounded text-[10px] font-bold tracking-widest bg-primary/10 text-primary border border-primary/20 uppercase">
                             {project.year}
                         </span>
-                        <span className="text-[10px] font-medium text-slate-500 uppercase tracking-wider">
+                        <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
                             — {project.type}
                         </span>
                     </div>
 
-                    <h3 className="font-bold text-2xl text-slate-100 group-hover:text-cyan-400 transition-colors flex items-center gap-2 tracking-tight">
+                    <h3 className="font-bold text-2xl text-foreground group-hover:text-primary transition-colors flex items-center gap-2 tracking-tight">
                         {project.title}
 
                     </h3>
 
-                    <p className="text-slate-400/90 text-base leading-relaxed mb-4 max-w-2xl font-light">
+                    <p className="text-muted-foreground/90 text-base leading-relaxed mb-4 max-w-2xl font-light">
                         {project.description}
                     </p>
                 </div>
@@ -76,7 +72,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     {project.tech.map((t) => (
                         <span
                             key={t}
-                            className="text-[11px] font-medium px-3 py-1 rounded-lg bg-slate-800/40 text-slate-400 border border-slate-700/30 group-hover:border-cyan-500/30 group-hover:text-cyan-300 transition-all duration-300 transform group-hover:translate-y-[-2px]"
+                            className="text-[11px] font-medium px-3 py-1 rounded-lg bg-muted/40 text-muted-foreground border border-border group-hover:border-primary/30 group-hover:text-primary transition-all duration-300 transform group-hover:translate-y-[-2px]"
                         >
                             {t}
                         </span>

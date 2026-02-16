@@ -1,0 +1,47 @@
+/* 🟡 YELLOW THEME */
+[data-theme='yellow'] {
+  /* --- Core Colors --- */
+  --background: #0c0a05;
+  --foreground: #fefce8;
+
+  /* --- Surface Colors --- */
+  --card: #1a160d;
+  --card-foreground: #fefce8;
+  --popover: #0c0a05;
+  --popover-foreground: #fefce8;
+
+  /* --- Action Colors --- */
+  --primary: #facc15;
+  --primary-foreground: #422006;
+  --secondary: #2d2412;
+  --secondary-foreground: #fefce8;
+  --accent: #422006;
+  --accent-foreground: #facc15;
+  --destructive: #ef4444;
+
+  /* --- UI Elements --- */
+  --muted: #1a160d;
+  --muted-foreground: #a16207;
+  --border: #422006;
+  --input: #422006;
+  --ring: #facc15;
+
+  /* --- Specialized Components --- */
+  --chart-1: #facc15;
+  --chart-2: #fde047;
+  --chart-3: #fef08a;
+  --chart-4: #fef9c3;
+  --chart-5: #fefce8;
+
+  --sidebar: #1a160d;
+  --sidebar-foreground: #fefce8;
+  --sidebar-primary: #facc15;
+  --sidebar-primary-foreground: #422006;
+  --sidebar-accent: #2d2412;
+  --sidebar-accent-foreground: #facc15;
+  --sidebar-border: #422006;
+  --sidebar-ring: #facc15;
+
+  /* --- Feature Variables --- */
+  --spotlight-glow: 250, 204, 21;
+}

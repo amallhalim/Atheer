@@ -35,7 +35,5 @@
     @apply block h-auto;
   }
 
-  .dark img {
-    @apply opacity-90 transition-opacity duration-300 hover:opacity-100;
-  }
+
 }

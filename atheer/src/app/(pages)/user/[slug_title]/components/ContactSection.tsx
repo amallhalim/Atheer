@@ -10,7 +10,7 @@ export default function ContactSection() {
             </p>
             <a
                 href="mailto:hello@example.com"
-                className=" px-8 py-4 border border-cyan-400 text-cyan-400  rounded hover:bg-cyan-400/10 "
+                className=" px-8 py-4 border border-primary text-primary rounded hover:bg-primary/10 "
             >
                 Say Hello
             </a>

@@ -1,0 +1,47 @@
+/* 🟢 GREEN THEME */
+[data-theme='green'] {
+  /* --- Core Colors --- */
+  --background: #06100a;
+  --foreground: #f0fdf4;
+
+  /* --- Surface Colors --- */
+  --card: #0c1a12;
+  --card-foreground: #f0fdf4;
+  --popover: #06100a;
+  --popover-foreground: #f0fdf4;
+
+  /* --- Action Colors --- */
+  --primary: #4ade80;
+  --primary-foreground: #052e16;
+  --secondary: #142e1e;
+  --secondary-foreground: #f0fdf4;
+  --accent: #052e16;
+  --accent-foreground: #4ade80;
+  --destructive: #ef4444;
+
+  /* --- UI Elements --- */
+  --muted: #0c1a12;
+  --muted-foreground: #166534;
+  --border: #052e16;
+  --input: #052e16;
+  --ring: #4ade80;
+
+  /* --- Specialized Components --- */
+  --chart-1: #4ade80;
+  --chart-2: #86efac;
+  --chart-3: #bbf7d0;
+  --chart-4: #dcfce7;
+  --chart-5: #f0fdf4;
+
+  --sidebar: #0c1a12;
+  --sidebar-foreground: #f0fdf4;
+  --sidebar-primary: #4ade80;
+  --sidebar-primary-foreground: #052e16;
+  --sidebar-accent: #142e1e;
+  --sidebar-accent-foreground: #4ade80;
+  --sidebar-border: #052e16;
+  --sidebar-ring: #4ade80;
+
+  /* --- Feature Variables --- */
+  --spotlight-glow: 74, 222, 128;
+}

@@ -16,10 +16,40 @@
 @import '../styles/theme/constants.css';
 @import '../styles/theme/light.css';
 @import '../styles/theme/dark.css';
+@import '../styles/theme/red.css';
+@import '../styles/theme/green.css';
+@import '../styles/theme/yellow.css';
+@import '../styles/theme/purple.css';
 @import '../styles/theme/tokens.css';
 
-/* Dark mode utility for Tailwind v4 */
-@custom-variant dark (&:is(.dark *));
+/* 
+  Dark mode utility for Tailwind v4 - Active for all dark-based themes
+  
+  This tells Tailwind when to apply "dark:" prefix classes (like dark:text-white)
+  We list each theme twice because:
+  1. [data-theme='red']   → Targets the <html> element itself
+  2. [data-theme='red'] * → Targets ALL descendants inside (the * means "any element")
+  
+  Without this, dark: classes would only work on the default "dark" theme.
+  With this, dark: classes work on ALL your dark-based themes (dark, red, green, yellow, purple, blue)
+*/
+@custom-variant dark (&:where(
+  /* Target the <html> element for each theme */
+  [data-theme='dark'],
+  [data-theme='red'], 
+  [data-theme='green'], 
+  [data-theme='yellow'], 
+  [data-theme='purple'], 
+  [data-theme='blue'],
+  
+  /* Target ALL child elements inside each theme (the * = any element) */
+  [data-theme='dark'] *,
+  [data-theme='red'] *,
+  [data-theme='green'] *, 
+  [data-theme='yellow'] *, 
+  [data-theme='purple'] *, 
+  [data-theme='blue'] *
+));
 
 /* --- 2. Component & Feature Styles --- */
 @import '../styles/components/navigation.css';
