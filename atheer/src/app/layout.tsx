@@ -70,8 +70,7 @@ export const metadata: Metadata = {
 
 import Spotlight from "@/components/layout/Spotlight";
 import ThemeSelector from "@/components/layout/ThemeSelector";
-
-
+import { ThemeProvider } from "next-themes";
 
 export default function RootLayout({
   children,
@@ -79,14 +78,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="ltr" data-theme="dark" >
-
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" dir="ltr" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} >
         <ThemeSelector />
         <Spotlight />
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

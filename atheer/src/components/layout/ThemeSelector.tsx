@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { ToggleGroup, ToggleGroupItem } from '../ui/toggle-group';
 import {
     Select,
     SelectContent,
@@ -11,10 +10,17 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useTheme } from 'next-themes';
 export default function ThemeSelector() {
-    const [theme, setTheme] = useState<string>("dark");
+    const router = useRouter()
+    const { theme, setTheme } = useTheme();
+    const pathname = usePathname()
+    const searchParams = useSearchParams()
+
     console.log("theme---", theme)
     const [mounted, setMounted] = useState(false);
+
 
 
     const items: { label: string, value: string, color: string }[] = [
@@ -25,27 +31,31 @@ export default function ThemeSelector() {
         { label: "Yellow", value: "yellow", color: "#facc15" },
         { label: "Purple", value: "purple", color: "#c084fc" },
     ]
-    // Load theme from localStorage on mount
+    // Load theme and set mounted status
     useEffect(() => {
-        setTimeout(() => {
+        const syncTheme = () => {
+            const currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
+            setTheme(currentTheme);
             setMounted(true);
-            const savedTheme = localStorage.getItem("theme");
-            console.log("savedTheme---=====", savedTheme)
-            if (savedTheme) {
-                setTheme(savedTheme);
-                document.documentElement.setAttribute("data-theme", savedTheme);
-            }
-        }, 0);
-    }, []);
+        };
+
+        syncTheme();
+    }, [searchParams]);
 
     if (!mounted) return null;
 
-    // Handle theme change
     const handleThemeChange = (value: string) => {
-        if (!value) return; // Prevent deselectin 
+        if (!value) return;
+
         setTheme(value);
         localStorage.setItem("theme", value);
         document.documentElement.setAttribute("data-theme", value);
+
+        const params = new URLSearchParams(searchParams.toString());
+        params.set("theme", value);
+
+        // Use scroll: false to prevent jumpy navigation
+        router.replace(`${pathname}?${params.toString()}`, { scroll: false });
     };
 
     return (
