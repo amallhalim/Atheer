@@ -80,9 +80,13 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} >
-        <ThemeSelector />
-        <Spotlight />
-        <ThemeProvider>
+        <ThemeProvider
+          attribute="data-theme"
+          defaultTheme="dark"
+          disableTransitionOnChange
+        >
+          <ThemeSelector />
+          <Spotlight />
           {children}
         </ThemeProvider>
       </body>
