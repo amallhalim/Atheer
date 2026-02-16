@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document explains the complete theming system for the application. The theme architecture uses CSS custom properties (variables) that are mapped to Tailwind utility classes, allowing for dynamic theme switching without page reloads.
+This document explains the complete theming system for the application. The system is built on **[next-themes](https://github.com/pacocoursey/next-themes)** for state management and persistance, combined with CSS custom properties (variables) mapped to Tailwind utility classes.
 
 ## File Structure
 
@@ -20,7 +20,37 @@ src/styles/theme/
 
 ## How It Works
 
-### 1. Theme Selection
+### 1. Theme State Management (`next-themes`)
+
+The application uses the `next-themes` library to handle:
+- Compelling theme switching without flashing
+- Syncing across tabs and windows
+- Detecting system preferences
+- Persisting theme selection to `localStorage`
+
+#### Provider Setup
+The `ThemeProvider` is configured in `src/app/layout.tsx` to use the `data-theme` attribute instead of classes:
+
+```tsx
+<ThemeProvider
+  attribute="data-theme"
+  defaultTheme="dark"
+  disableTransitionOnChange
+>
+  {children}
+</ThemeProvider>
+```
+
+> **Note**: `disableTransitionOnChange` prevents transition flashes when switching themes.
+
+#### Preventing Hydration Mismatch
+Because the theme is read from `localStorage` on the client, the server-rendered HTML might differ. To prevent hydration warnings, `suppressHydrationWarning` is added to the `<html>` tag:
+
+```tsx
+<html lang="en" dir="ltr" suppressHydrationWarning>
+```
+
+### 2. Theme Selection
 
 Themes are controlled by the `data-theme` attribute on the `<html>` element:
 
@@ -30,9 +60,26 @@ Themes are controlled by the `data-theme` attribute on the `<html>` element:
 </html>
 ```
 
-The `ThemeSelector` component manages this attribute and persists the selection to `localStorage`.
+The `ThemeSelector` component uses the `useTheme` hook to read and update the active theme:
 
-### 2. CSS Variable Architecture
+```tsx
+import { useTheme } from 'next-themes';
+
+export default function ThemeSelector() {
+  const { theme, setTheme } = useTheme();
+  
+  // theme: Current active theme string (e.g. 'dark', 'red')
+  // setTheme: Function to update the theme
+  
+  return (
+    <Select value={theme} onValueChange={setTheme}>
+      {/* ... items ... */}
+    </Select>
+  );
+}
+```
+
+### 3. CSS Variable Architecture
 
 Each theme file defines a complete set of CSS variables:
 
@@ -48,7 +95,7 @@ Each theme file defines a complete set of CSS variables:
 }
 ```
 
-### 3. Tailwind Integration
+### 4. Tailwind Integration
 
 The `tokens.css` file maps these CSS variables to Tailwind's design system:
 
