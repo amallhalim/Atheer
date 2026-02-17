@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   alternates: {
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Amal Halim - Frontend Engineer Portfolio",
-      }
+      },
     ],
   },
   twitter: {
@@ -57,20 +57,22 @@ export const metadata: Metadata = {
     description: "Frontend Engineer with 3+ years of experience building accessible, pixel-perfect digital experiences for the web.",
     images: ["https://atheer.dev/og-image.jpg"],
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a192f" },
   ],
 };
 
 import Spotlight from "@/components/layout/Spotlight";
-import ThemeSelector from "@/components/layout/ThemeSelector";
 import { ThemeProvider } from "next-themes";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 export default function RootLayout({
   children,
@@ -78,16 +80,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="ltr" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} >
+    <html lang="en" dir="ltr" className="h-screen overflow-hidden" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen overflow-hidden`}>
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="dark"
           disableTransitionOnChange
         >
-          <ThemeSelector />
-          <Spotlight />
-          {children}
+          <div className="flex flex-col h-full overflow-hidden">
+            <Spotlight />
+            <Header />
+            <main className="flex-1 overflow-y-auto">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
