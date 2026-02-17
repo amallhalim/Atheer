@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useSyncExternalStore } from "react";
 import {
     Select,
     SelectContent,
@@ -11,8 +11,22 @@ import {
 } from "@/components/ui/select";
 import { useTheme } from "next-themes";
 
+const subscribe = () => () => { };
+
 export default function ThemeSelector() {
     const { theme, setTheme } = useTheme();
+
+    // We use useSyncExternalStore to detect if we're on the client.
+    // This is the modern (React 18+) way to handle hydration mismatches.
+    // A "hydration mismatch" happens when the server-rendered HTML differs from the first 
+    // client render (e.g., the server doesn't know your theme, but the browser does).
+    // Unlike useEffect + setState, this pattern avoids "cascading renders"
+    // and performance warnings by providing a stable state during hydration.
+    const isClient = useSyncExternalStore(
+        subscribe,
+        () => true,
+        () => false
+    );
 
 
     const THEME_ITEMS = [
@@ -26,6 +40,9 @@ export default function ThemeSelector() {
 
 
 
+    if (!isClient) {
+        return null
+    }
     return (
         <Select value={theme} onValueChange={setTheme}>
             <SelectTrigger className="w-[140px] justify-between">
