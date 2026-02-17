@@ -1,33 +1,48 @@
 import Link from "next/link"
+import { BsTwitter } from "react-icons/bs";
+import { SiGithub, SiLinkedin, SiGmail } from "react-icons/si";
 
 export default function Footer() {
+
+    const socialLinks = [
+        { href: "https://github.com/amallhalim", icon: SiGithub, label: "GitHub" },
+        { href: "https://twitter.com/amalhalim", icon: BsTwitter, label: "Twitter" },
+        { href: "https://linkedin.com/in/amalhalim", icon: SiLinkedin, label: "LinkedIn" }
+    ]
+    const year = new Date().getFullYear();
+    const githubLink = socialLinks.find((social) => social.label === "GitHub");
+    const twitterLink = socialLinks.find((social) => social.label === "Twitter");
     return (
-        <footer className="border-t border-border/40 py-6 md:py-0">
-            <div className="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row px-4 md:px-8 max-w-screen-2xl">
-                <p className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
-                    Built by{" "}
-                    <Link
-                        href="https://twitter.com/amalhalim"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="font-medium underline underline-offset-4 hover:text-primary transition-colors"
-                    >
-                        Amal Halim
-                    </Link>
-                    . The source code is available on{" "}
-                    <Link
-                        href="https://github.com/atheer"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="font-medium underline underline-offset-4 hover:text-primary transition-colors"
-                    >
-                        GitHub
-                    </Link>
-                    .
+        <footer className="
+        z-50 border-t border-border/40 
+        flex flex-col md:flex-row items-center 
+        justify-between gap-3 px-4 py-2 
+         ">
+            <p className="text-[10px] tracking-tight text-muted-foreground">
+                Built by{" "}
+                <Link href={twitterLink?.href} target="_blank" className="font-bold text-foreground hover:text-primary transition-colors">Amal Halim</Link>
+                . Code on <Link href={githubLink?.href} target="_blank" className="font-bold text-foreground hover:text-primary transition-colors">GitHub</Link>.
+            </p>
+
+            <div className="flex items-center gap-3">
+                <p className="hidden text-[10px] text-muted-foreground md:block">
+                    &copy; {year} Atheer
                 </p>
-                <p className="text-sm text-muted-foreground">
-                    &copy; {new Date().getFullYear()} Atheer. All rights reserved.
-                </p>
+                <div className="hidden h-3 w-px bg-border/40 md:block" />
+                <div className="flex items-center gap-0.5">
+                    {socialLinks.map((social) => (
+                        <Link
+                            key={social.label}
+                            href={social.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="p-1.5 text-muted-foreground hover:text-primary transition-colors"
+                        >
+                            <social.icon className="h-3.5 w-3.5" />
+                            <span className="sr-only">{social.label}</span>
+                        </Link>
+                    ))}
+                </div>
             </div>
         </footer>
     )
