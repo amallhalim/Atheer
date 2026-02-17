@@ -14,7 +14,7 @@ export default function page() {
             </div>
 
             <Link
-                href='/user/amal'
+                href='/amal'
                 className='px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity'
             >
                 View Amal's Portfolio
