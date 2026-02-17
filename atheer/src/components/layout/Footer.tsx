@@ -20,8 +20,8 @@ export default function Footer() {
          ">
             <p className="text-[10px] tracking-tight text-muted-foreground">
                 Built by{" "}
-                <Link href={twitterLink?.href} target="_blank" className="font-bold text-foreground hover:text-primary transition-colors">Amal Halim</Link>
-                . Code on <Link href={githubLink?.href} target="_blank" className="font-bold text-foreground hover:text-primary transition-colors">GitHub</Link>.
+                <Link href={twitterLink?.href || "#"} target="_blank" className="font-bold text-foreground hover:text-primary transition-colors">Amal Halim</Link>
+                . Code on <Link href={githubLink?.href || "#"} target="_blank" className="font-bold text-foreground hover:text-primary transition-colors">GitHub</Link>.
             </p>
 
             <div className="flex items-center gap-3">
