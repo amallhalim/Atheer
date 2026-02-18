@@ -2,7 +2,7 @@
 import React from 'react'
 import Image, { StaticImageData } from 'next/image'
 
-export default function HoverImage({ url, title }: { url: StaticImageData, title: string }) {
+export default function HoverImage({ url, title }: { url: StaticImageData | string, title: string }) {
     return (
         <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-slate-700/50 shadow-xl  ">
             <Image

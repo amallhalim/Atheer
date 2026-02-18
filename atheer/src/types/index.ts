@@ -5,7 +5,7 @@ export interface Project {
     description: string;
     tech: string[];
     link: string;
-    images: StaticImageData[];
+    images: (StaticImageData | string)[];
     year: string;
     type: string;
 }
