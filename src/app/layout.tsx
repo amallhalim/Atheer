@@ -69,10 +69,11 @@ export const viewport: Viewport = {
   ],
 };
 
-import Spotlight from "@/components/layout/Spotlight";
+const Spotlight = dynamic(() => import("@/components/layout/Spotlight"), { loading: () => <p>Loading...</p> })
 import { ThemeProvider } from "next-themes";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import dynamic from "next/dynamic";
 
 export default function RootLayout({
   children,
