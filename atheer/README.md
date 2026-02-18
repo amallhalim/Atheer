@@ -14,6 +14,20 @@ pnpm dev
 bun dev
 ```
 
+### Linting & Code Quality
+
+To check for code errors, unused imports, or stylistic issues, run:
+
+```bash
+npm run lint
+```
+
+**Why use it?**
+- **Catch Bugs early**: Identifies common mistakes (like unescaped characters in JSX).
+- **Clean Code**: Flags unused variables and imports.
+- **Consistency**: Ensures the code follows the project's standards.
+- **Pre-deployment check**: It's recommended to run this before committing or deploying to ensure everything is correct.
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.

@@ -1,5 +1,4 @@
 "use client"
-import Image from 'next/image'
 import React from 'react'
 import HoverImage from '@/components/image/HoverImage';
 import PROJECTS from '@/static-data/Projects';
@@ -18,7 +17,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             className="group relative flex flex-col lg:flex-row gap-8 p-6 rounded-3xl transition-all duration-500 hover:bg-muted/30 border border-transparent hover:border-border"
         >
             {/* Subtle glow effect on hover */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+            <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
 
             {/* Gallery Section */}
             <div className="flex flex-col  flex-1 gap-4 w-full lg:w-72 shrink-0">

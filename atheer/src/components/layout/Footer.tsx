@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { BsTwitter } from "react-icons/bs";
-import { SiGithub, SiLinkedin, SiGmail } from "react-icons/si";
+import { SiGithub, SiLinkedin } from "react-icons/si";
 
 export default function Footer() {
 

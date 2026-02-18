@@ -17,7 +17,7 @@ export default function page() {
                 href='/amal'
                 className='px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity'
             >
-                View Amal's Portfolio
+                View Amal&apos;s Portfolio
             </Link>
 
             <p className='text-sm text-muted-foreground fixed bottom-8'>
