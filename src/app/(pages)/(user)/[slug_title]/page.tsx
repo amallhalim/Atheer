@@ -18,7 +18,7 @@ export default function UserProfile() {
                         <NameSection />
                         <NavLinks />
                         <SocialLinks />
-                        <Button labal="View Full Resume" icon={<HiOutlineArrowDownTray />} />
+                        <Button label="View Full Resume" icon={<HiOutlineArrowDownTray />} />
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Button({ labal, icon, onClick }:
-    { labal: string, icon?: React.ReactNode, onClick?: () => void }) {
+export default function Button({ label, icon, onClick }:
+    { label: string, icon?: React.ReactNode, onClick?: () => void }) {
     return (
         <button className='flex justify-center items-center gap-2
          rounded-2xl bg-secondary  hover:bg-primary 
@@ -9,7 +9,7 @@ export default function Button({ labal, icon, onClick }:
          px-4 py-2 text-sm font-semibold '
             onClick={onClick}
         >
-            {labal}
+            {label}
             {icon}
         </button>
     )
