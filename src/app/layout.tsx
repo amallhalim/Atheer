@@ -12,6 +12,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
+
+
+
 export const metadata: Metadata = {
   title: "Amal Halim - Frontend Engineer",
   description: "Frontend Engineer with 3+ years of experience building accessible, pixel-perfect digital experiences for the web using React and modern JavaScript.",
