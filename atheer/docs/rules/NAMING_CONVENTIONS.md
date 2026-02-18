@@ -4,9 +4,9 @@ Consistent naming is crucial for code readability.
 
 ## Files & Directories
 
-- **Components**: PascalCase (e.g., `ThemeSelector.tsx`, `UserProfile.tsx`).
-- **Directories (Components)**: PascalCase (e.g., `components/UserProfile/`).
-- **Utilities/Helpers**: kebab-case (e.g., `format-date.ts`) or camelCase (`formatDate.ts`) - *Prefer kebab-case for files*.
+- **Components**: PascalCase (e.g., `ThemeSelector.tsx`, `Button.tsx`).
+- **Directories**: kebab-case or lowercase for all directories (e.g., `static-data`, `ui`, `shared`, `components/user-profile/`).
+- **Utilities/Helpers**: kebab-case (e.g., `format-date.ts`).
 - **Styles**: kebab-case (e.g., `theme-dark.css`).
 - **Next.js Routes**: kebab-case (e.g., `app/blog-posts/page.tsx`).
 
