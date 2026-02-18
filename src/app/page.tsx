@@ -20,9 +20,10 @@ export default function page() {
                 View Amal&apos;s Portfolio
             </Link>
 
-            <p className='text-sm text-muted-foreground fixed bottom-8'>
+            <p className='text-sm text-muted-foreground fixed bottom-8 mb-5'>
                 &copy; {new Date().getFullYear()} Atheer Project
             </p>
+
 
 
 
