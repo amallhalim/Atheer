@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React from 'react'
 import HoverImage from '@/components/image/HoverImage';
-import PROJECTS from '@/staticData/Projects';
+import PROJECTS from '@/static-data/Projects';
 import { Project } from '@/types';
 
 

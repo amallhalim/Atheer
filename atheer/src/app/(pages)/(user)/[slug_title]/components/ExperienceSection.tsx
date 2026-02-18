@@ -1,6 +1,6 @@
 import SkillTags from '@/components/tags/SkillTags';
 import React from 'react';
-import experiences from '@/staticData/experiences';
+import experiences from '@/static-data/experiences';
 
 export default function ExperienceSection() {
 
