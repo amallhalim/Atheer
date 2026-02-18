@@ -91,7 +91,7 @@ export default function RootLayout({
           <div className="flex flex-col h-full overflow-hidden">
             <Spotlight />
             <Header />
-            <main className="flex-1 overflow-y-auto">
+            <main className="flex-1 overflow-y-auto lg:overflow-hidden">
               {children}
             </main>
             <Footer />
