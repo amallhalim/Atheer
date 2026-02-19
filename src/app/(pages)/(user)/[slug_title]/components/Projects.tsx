@@ -3,7 +3,7 @@ import React from 'react'
 import HoverImage from '@/components/image/HoverImage';
 import PROJECTS from '@/static-data/Projects';
 import { Project } from '@/types';
-import TechLabel from '@/components/labal/TechLabel';
+import TechLabel from '@/components/label/TechLabel';
 
 
 
