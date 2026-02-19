@@ -89,10 +89,10 @@ export default function RootLayout({
           defaultTheme="dark"
           disableTransitionOnChange
         >
-          <div className="flex flex-col h-full overflow-hidden">
+          <div className="flex flex-col h-full">
             <Spotlight />
             <Header />
-            <main className="flex-1 overflow-y-auto lg:overflow-hidden">
+            <main className="flex-1 min-h-0 overflow-y-auto lg:overflow-hidden">
               {children}
             </main>
             <Footer />
