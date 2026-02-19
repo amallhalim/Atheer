@@ -1,13 +1,34 @@
 # Atheer — Project Documentation
 
-Feature-level documentation for the Atheer portfolio platform.
+## 📁 Structure
 
-## Features
-
-| Feature | Doc | Status |
-|:---|:---|:---|
-| Short Bio | [short-bio.md](./features/short-bio.md) | ✅ Documented |
+| Folder | Purpose |
+|:---|:---|
+| `architecture/` | How the app is structured — start here |
+| `features/` | What each feature does |
+| `components/` | How shared components work |
+| `decisions/` | Why important decisions were made (ADRs) |
 
 ---
 
-> More features will be documented here as the dashboard is built.
+## 🏗️ Architecture
+
+- [Overview](./architecture/overview.md) — tech stack, folder structure, data flow, layout
+
+## ✨ Features
+
+| Feature | Doc | Status |
+|:---|:---|:---|
+| Short Bio | [short-bio.md](./features/short-bio.md) | ✅ Done |
+
+## 🧩 Components
+
+| Component | Doc | Status |
+|:---|:---|:---|
+| Icons | [icons.md](./components/icons.md) | ✅ Done |
+
+## 📋 Decisions (ADRs)
+
+| # | Decision | Status |
+|:---|:---|:---|
+| 001 | [Rich Text Segments](./decisions/001-rich-text-segments.md) | ✅ Accepted |
