@@ -11,8 +11,8 @@ export default function ExperienceSection() {
              hover:bg-muted/30 border border-transparent
               hover:border-border transition-all duration-500 scroll-mt-12 lg:scroll-mt-24"
         >
-            {experiences.map((exp, index) => (
-                <div key={index} className='flex flex-col md:flex-row gap-4 md:gap-8 group'>
+            {experiences.map((exp) => (
+                <div key={exp.id} className='flex flex-col md:flex-row gap-4 md:gap-8 group'>
                     {/* Date Section */}
                     <div className='flex-1'>
                         <span className='text-muted-foreground font-medium text-sm bg-muted px-3 py-1 rounded-full whitespace-nowrap'>
