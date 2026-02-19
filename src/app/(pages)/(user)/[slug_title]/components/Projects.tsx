@@ -3,6 +3,7 @@ import React from 'react'
 import HoverImage from '@/components/image/HoverImage';
 import PROJECTS from '@/static-data/Projects';
 import { Project } from '@/types';
+import TechLabal from '@/components/labal/TechLabal';
 
 
 
@@ -32,7 +33,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
                                 key={i}
                                 className="relative h-15 rounded-xl"
                             >
-
                                 <HoverImage url={img} title={project.title} />
                             </div>
                         ))}
@@ -69,12 +69,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
                 <div className="mt-auto flex flex-wrap gap-2">
                     {project.tech.map((t) => (
-                        <span
-                            key={t}
-                            className="text-[11px] font-medium px-3 py-1 rounded-lg bg-muted/40 text-muted-foreground border border-border group-hover:border-primary/30 group-hover:text-primary transition-all duration-300 transform group-hover:translate-y-[-2px]"
-                        >
-                            {t}
-                        </span>
+
+                        <TechLabal key={t} skill={t} />
                     ))}
                 </div>
             </div>
