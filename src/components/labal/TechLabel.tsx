@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function TechLabal({ key, skill }:
+export default function TechLabel({ key, skill }:
     { key: string, skill: string }) {
     return (
         <span

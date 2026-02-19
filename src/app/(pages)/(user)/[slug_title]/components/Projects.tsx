@@ -3,7 +3,7 @@ import React from 'react'
 import HoverImage from '@/components/image/HoverImage';
 import PROJECTS from '@/static-data/Projects';
 import { Project } from '@/types';
-import TechLabal from '@/components/labal/TechLabal';
+import TechLabel from '@/components/labal/TechLabel';
 
 
 
@@ -63,7 +63,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 </div>
                 <div className="mt-auto flex flex-wrap gap-2">
                     {project.tech.map((t) => (
-                        <TechLabal key={t} skill={t} />
+                        <TechLabel key={t} skill={t} />
                     ))}
                 </div>
             </div>
