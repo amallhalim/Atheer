@@ -9,8 +9,7 @@ export default function Button({ label, icon, onClick }:
          px-4 py-2 text-sm font-semibold '
             onClick={onClick}
         >
-            {label}
-            {icon}
+            {label} {icon}
         </button>
     )
 }
