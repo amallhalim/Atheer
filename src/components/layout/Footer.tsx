@@ -15,8 +15,9 @@ export default function Footer() {
     return (
         <footer className="
         z-50 border-t border-border/40 
-        flex flex-col md:flex-row items-center 
-        justify-between gap-3 px-4 py-2 
+        flex flex-row  items-center 
+        justify-between gap-3 px-4 md:px-2 py-2 
+        text-xs md:text-sm
          ">
             <p className="text-[10px] tracking-tight text-muted-foreground">
                 Built by{" "}
