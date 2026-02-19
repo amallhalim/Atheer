@@ -1,11 +1,9 @@
-import SkillTags from '@/components/tags/SkillTags';
 import React from 'react';
+
+import SkillTags from '@/components/tags/SkillTags';
 import experiences from '@/static-data/experiences';
 
 export default function ExperienceSection() {
-
-
-
     return (
         <div
             id="experienceSection"
@@ -21,20 +19,17 @@ export default function ExperienceSection() {
                             {exp.date}
                         </span>
                     </div>
-
                     {/* Content Section */}
                     <div className='flex-4'>
                         <h3 className='text-xl font-bold text-foreground group-hover:text-primary transition-colors'>
                             {exp.title} · {exp.company}
                         </h3>
                         <p className='text-muted-foreground text-sm mb-4'>{exp.location}</p>
-
                         <ul className='list-custom'>
                             {exp.description.map((item: string) => (
                                 <li key={item}>{item}</li>
                             ))}
                         </ul>
-
                         <div className="flex flex-wrap gap-2">
                             {exp.skills.map((skill: string) => (
                                 <SkillTags key={skill} skill={skill} />
