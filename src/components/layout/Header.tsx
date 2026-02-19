@@ -5,7 +5,9 @@ import ThemeSelector from "./ThemeSelector"
 
 export default function Header() {
     return (
-        <header className="fixed top-0 w-full flex items-center justify-between px-4 md:px-8 py-3 z-50 shrink-0 border-b border-border/40 bg-background/60 backdrop-blur-xl supports-backdrop-filter:bg-background/30">
+        <header className="h-full w-full flex items-center justify-between
+         px-4 md:px-8 shrink-0 border-b border-border/40 
+         bg-background/60 backdrop-blur-xl supports-backdrop-filter:bg-background/30">
             <Link href="/" className="group flex items-center gap-2.5">
                 <div className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
                     <p className="text-black ">A</p>

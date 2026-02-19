@@ -91,8 +91,11 @@ export default function RootLayout({
         >
           <div className="flex flex-col h-full">
             <Spotlight />
-            <Header />
-            <main className="flex-1 min-h-0 overflow-y-auto lg:overflow-hidden">
+            <div className="fixed top-0 w-full z-50 h-14">
+              <Header />
+            </div>
+
+            <main className="flex-1 min-h-0 pt-14 overflow-y-auto lg:overflow-hidden">
               {children}
             </main>
             <Footer />
