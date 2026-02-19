@@ -28,7 +28,6 @@ export default function ThemeSelector() {
         () => false
     );
 
-
     const THEME_ITEMS = [
         { label: "Light", value: "light", color: "#ffffff" },
         { label: "Dark", value: "dark", color: "#0a192f" },
@@ -37,8 +36,6 @@ export default function ThemeSelector() {
         { label: "Yellow", value: "yellow", color: "#facc15" },
         { label: "Purple", value: "purple", color: "#c084fc" },
     ];
-
-
 
     if (!isClient) {
         return null
@@ -50,7 +47,6 @@ export default function ThemeSelector() {
                     <SelectValue placeholder="Theme" />
                 </div>
             </SelectTrigger>
-
             <SelectContent align="end" className="w-[180px]">
                 <SelectGroup>
                     {THEME_ITEMS.map((item) => (
@@ -66,7 +62,6 @@ export default function ThemeSelector() {
                                 />
                                 {item.label}
                             </div>
-
                         </SelectItem>
                     ))}
                 </SelectGroup>

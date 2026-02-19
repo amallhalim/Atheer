@@ -3,9 +3,6 @@ import React from 'react'
 import { userData } from '@/static-data/userData'
 
 export default function NameSection() {
-
-
-
     return (
         <div className='flex flex-col justify-start '>
             <h1 className="text-6xl font-bold text-foreground">{userData.displayName} </h1>

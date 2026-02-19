@@ -19,11 +19,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
         >
             {/* Subtle glow effect on hover */}
             <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-
             {/* Gallery Section */}
             <div className="flex flex-col  flex-1 gap-4 w-full lg:w-72 shrink-0">
                 {/* Main Featured Image */}
-
                 <HoverImage url={project.images[0]} title={project.title} />
                 {/* Dynamic Secondary Thumbnails */}
                 {hasMultipleImages && (
@@ -56,20 +54,15 @@ const ProjectCard = ({ project }: { project: Project }) => {
                             — {project.type}
                         </span>
                     </div>
-
                     <h3 className="font-bold text-2xl text-foreground group-hover:text-primary transition-colors flex items-center gap-2 tracking-tight">
                         {project.title}
-
                     </h3>
-
                     <p className="text-muted-foreground/90 text-base leading-relaxed mb-4 max-w-2xl font-light">
                         {project.description}
                     </p>
                 </div>
-
                 <div className="mt-auto flex flex-wrap gap-2">
                     {project.tech.map((t) => (
-
                         <TechLabal key={t} skill={t} />
                     ))}
                 </div>
