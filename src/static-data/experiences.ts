@@ -5,6 +5,7 @@ import { Experience } from "@/types/Experience";
 
 const experiences: Experience[] = [
     {
+        id: 1,
         date: "08/2023 – Present",
         title: "Full Stack Developer",
         company: "Zetaton",
