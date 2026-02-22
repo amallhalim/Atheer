@@ -6,7 +6,7 @@ import ExperienceSection from './components/ExperienceSection'
 import Projects from './components/Projects'
 import SocialLinks from './components/SocialLinks'
 import { HiOutlineArrowDownTray } from "react-icons/hi2";
-import Button from '@/components/Button'
+import Button from '@/components/button/Button'
 
 export default function UserProfile() {
     return (
