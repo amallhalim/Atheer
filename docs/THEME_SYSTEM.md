@@ -160,6 +160,38 @@ Verify your theme is included in the `@custom-variant dark` configuration in `gl
 
 ---
 
+---
+
+## 🎨 Visual System & Standards
+
+### 🔡 Typography
+We use **Geist Sans** (Inter-like modern) and **Geist Mono** for the interface.
+- **Mapping**: Mapped in `tokens.css` via `--font-sans` and `--font-mono`.
+- **Usage**: Use `font-sans` for body text; `font-mono` for metadata, dates, and code snippets.
+
+### 🪜 Layering (Z-Index Scale)
+To maintain visual depth without conflicts, follow this standard scale:
+- `z-negative`: Background decorations.
+- `z-0`: Standard content.
+- `z-30`: **Interactive Spotlight** (above content, below menus).
+- `z-50`: Fixed Navigation & Sticky headers.
+- `z-100`: Modals, Popups, and Tooltips.
+
+### 🔦 Signature Spotlight Effect
+The "Glow" follow-effect is a central cinematic element.
+- **Logic**: A radial gradient tracking the mouse via CSS variables.
+- **Color**: Automatically swaps using the `--spotlight-glow` theme variable.
+- **Style**: Defined in `src/styles/components/layout.css`.
+
+---
+
+## 🏗️ CSS Orchestration Pattern
+We follow a **Modular Orchestrator Pattern** to keep Tailwind clean:
+- **Tailwind Utilities**: For atomic adjustments.
+- **Component Classes**: Defined in `src/styles/components/` using `@apply` for complex layouts (e.g., `.nav-link`, `.project-card`).
+
+---
+
 ## ⚙️ Technical Details
 
 - **Specificity**: Theme files are imported in a specific order (`constants` → `light` → `dark` → `colors` → `tokens`). Later imports override earlier ones for equal specificity.

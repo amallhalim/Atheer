@@ -62,11 +62,31 @@ graph LR
 
 ---
 
+---
+
 ## 🎨 Styling Strategy
 
 All visual decisions, including our **Theme Choice**, **Tailwind Integration**, and **CSS Conventions**, are documented in:
-- **[Style & Theme Guidelines](./styling/GUIDELINES.md)**
-- **[Theme System](./THEME_SYSTEM.md)**
+- **[Theme System & Guidelines](./THEME_SYSTEM.md)**
+
+---
+
+## 🧠 Senior Design Considerations
+
+### 1. Data-Driven UI (Static-to-API Ready)
+We use a **Headless Pattern** for content. By separating TypeScript-typed data from React components, we achieve:
+- **Portability**: Content can be moved to a remote API or CMS (Strapi, Sanity) with zero changes to the component structure.
+- **Type Safety**: strict TypeScript interfaces ensure data integrity across the entire render tree.
+
+### 2. Component Composition (Shadcn + Radix)
+Our component strategy prioritizes **Accessibility (A11y)** and **Full Control**:
+- **Radix UI**: Handles complex interactions (Dialogs, Popovers, Tabs) with ARIA standards baked in.
+- **Tailwind CSS**: Provides the aesthetic layer without the bloat of traditional CSS-in-JS.
+
+### 3. Modular CSS Orchestration
+Unlike traditional Tailwind projects that suffer from "Attribute Bloat," we use a **Layered Orchestrator Pattern**:
+- **Tailwind Utilities**: For one-off atomic adjustments.
+- **SCSS-style @apply**: For repeating complex visual patterns (Cards, Navigation) to keep components readable and maintainable.
 
 ---
 

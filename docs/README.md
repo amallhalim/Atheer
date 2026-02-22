@@ -1,45 +1,43 @@
-# Atheer — Project Documentation
+# Atheer — Project Documentation Index
 
-Welcome to the Atheer documentation. This directory contains all technical guides, standards, and feature specifications for the project.
-
-## 📁 Key Documentation
-
-| File | Purpose |
-| :--- | :--- |
-| [ARCHITECTURE.md](./ARCHITECTURE.md) | Technical stack, project structure, and data flow |
-| [ROADMAP.md](./ROADMAP.md) | Project goals, phases, and future enhancements |
-| [FEATURES.md](./FEATURES.md) | Business logic and feature specifications |
-| [THEME_SYSTEM.md](./THEME_SYSTEM.md) | Deep dive into the dynamic theming architecture |
+Welcome to the Atheer technical documentation. This directory provides a structured knowledge base for developers to understand the architecture, design decisions, and standards of the portfolio platform.
 
 ---
 
-## 🛠️ Standards & Guidelines
+## 🏛️ Core Guides
 
-- [Coding Standards](./rules/COMPONENT_GUIDELINES.md)
-- [Naming Conventions](./rules/NAMING_CONVENTIONS.md)
-- [Folder Structure](./rules/FOLDER_STRUCTURE.md)
-- [Styling Rules](./styling/GUIDELINES.md)
-- [Theme System & Guidelines](./THEME_SYSTEM.md)
+| Guide | Description |
+| :--- | :--- |
+| **[Architecture](./ARCHITECTURE.md)** | Tech stack, system design, and data lifecycle |
+| **[Theme System](./THEME_SYSTEM.md)** | Technical spec for dynamic themes & styling standards |
+| **[Features](./FEATURES.md)** | Business logic, workflows, and implementation status |
+| **[Roadmap](./ROADMAP.md)** | Phase-by-phase development goals and enhancements |
 
-## ✨ Features Detail
+---
 
-| Feature | Doc | Status |
-|:---|:---|:---|
-| Short Bio | [short-bio.md](./features/short-bio.md) | ✅ Done |
+## 🛠️ Standards & Quality
 
-## 🧩 Component Detail
+Maintaining a high-end portfolio requires strict adherence to our development standards:
+- **[Component Guidelines](./rules/COMPONENT_GUIDELINES.md)**: Best practices for React/Shadcn components.
+- **[Naming Conventions](./rules/NAMING_CONVENTIONS.md)**: Case styles for files, functions, and variables.
+- **[Folder Structure](./rules/FOLDER_STRUCTURE.md)**: The "Atheer Way" of organizing code.
+- **[Documentation Policy](./rules/DOCUMENTATION_POLICY.md)**: Rules for keeping this documentation fresh.
 
-| Component | Doc | Status |
-|:---|:---|:---|
-| Icons | [icons.md](./components/icons.md) | ✅ Done |
+---
 
-## 📋 Decisions (ADRs)
+## ✨ Feature Deep-Dives
 
-| # | Decision | Status |
-|:---|:---|:---|
-| 001 | [Rich Text Segments](./decisions/001-rich-text-segments.md) | ✅ Accepted |
+Detailed specifications for individual complex features:
+- **[Short Bio](./features/short-bio.md)**: Logic behind interactive bio segments.
+
+---
+
+## 🧩 Technical Details
+
+- **[Icons System](./components/icons.md)**: How we manage Lucide vs. React Icons.
+- **[Rich Text Segments](./decisions/001-rich-text-segments.md)**: ADR on handling interactive text.
 
 ---
 
 > [!NOTE]
-> For general project information and installation steps, please refer to the root [README.md](../README.md).
+> For general info, installation steps, and the Quick Start guide, refer to the root [README.md](../README.md).
