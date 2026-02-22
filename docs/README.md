@@ -1,27 +1,33 @@
 # Atheer — Project Documentation
 
-## 📁 Structure
+Welcome to the Atheer documentation. This directory contains all technical guides, standards, and feature specifications for the project.
 
-| Folder | Purpose |
-|:---|:---|
-| `architecture/` | How the app is structured — start here |
-| `features/` | What each feature does |
-| `components/` | How shared components work |
-| `decisions/` | Why important decisions were made (ADRs) |
+## 📁 Key Documentation
+
+| File | Purpose |
+| :--- | :--- |
+| [ARCHITECTURE.md](./ARCHITECTURE.md) | Technical stack, project structure, and data flow |
+| [ROADMAP.md](./ROADMAP.md) | Project goals, phases, and future enhancements |
+| [FEATURES.md](./FEATURES.md) | Business logic and feature specifications |
+| [THEME_SYSTEM.md](./THEME_SYSTEM.md) | Deep dive into the dynamic theming architecture |
 
 ---
 
-## 🏗️ Architecture
+## 🛠️ Standards & Guidelines
 
-- [Overview](./architecture/overview.md) — tech stack, folder structure, data flow, layout
+- [Coding Standards](./rules/COMPONENT_GUIDELINES.md)
+- [Naming Conventions](./rules/NAMING_CONVENTIONS.md)
+- [Folder Structure](./rules/FOLDER_STRUCTURE.md)
+- [Theming Guidelines](./rules/THEME_GUIDELINES.md)
+- [Styling Rules](./styling/GUIDELINES.md)
 
-## ✨ Features
+## ✨ Features Detail
 
 | Feature | Doc | Status |
 |:---|:---|:---|
 | Short Bio | [short-bio.md](./features/short-bio.md) | ✅ Done |
 
-## 🧩 Components
+## 🧩 Component Detail
 
 | Component | Doc | Status |
 |:---|:---|:---|
@@ -32,3 +38,8 @@
 | # | Decision | Status |
 |:---|:---|:---|
 | 001 | [Rich Text Segments](./decisions/001-rich-text-segments.md) | ✅ Accepted |
+
+---
+
+> [!NOTE]
+> For general project information and installation steps, please refer to the root [README.md](../README.md).

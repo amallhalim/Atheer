@@ -1,6 +1,30 @@
-# Portfolio Enhancement Roadmap
+# Portfolio Enhancement Roadmap 🚀
 
-This document outlines the suggested improvements for the portfolio based on a senior developer review.
+This document outlines the planned improvements to elevate the portfolio to a world-class standard.
+
+## 🏁 High-Level Phases
+
+### 🟢 Phase 1: Interactive Motion
+- **Status**: Completed
+- **Focus**: Staggered entrance animations and basic interactivity using `framer-motion`.
+
+### 🔵 Phase 2: Visual Depth & UI
+- **Status**: In Progress
+- **Focus**: "Bento Grid" layouts, custom scrollbars, and glassmorphic refinements.
+
+### 🟡 Phase 3: UX & Micro-interactions
+- **Status**: Planned
+- **Focus**: Copy-to-clipboard, scroll-progress indicators, and CMD+K menu.
+
+### 🟣 Phase 4: Performance & SEO
+- **Status**: Planned
+- **Focus**: Blur-up placeholders and advanced metadata.
+
+---
+
+## 🛠️ Detailed Checklist
+
+Based on senior developer review and creative direction.
 
 ## 🎨 Design & UI
 - [ ] **Spacing Balance**: In `Projects.tsx`, increase the gap between the `year/type` badge and the `title` for better readability.

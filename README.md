@@ -1,56 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Atheer Portfolio 🚀
 
-## Getting Started
+**Atheer** is a premium, cinematic portfolio platform built with Next.js. It's designed to showcase developer talent with a high-end "Glow & Glass" aesthetic, inspired by modern design standards like those of Brittany Chiang.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Features
 
-### Linting & Code Quality
+- **Cinematic UI**: Smooth entry animations using Framer Motion and a signature "Spotlight" mouse-tracking effect.
+- **Dynamic Theming**: Multiple color themes (Teal, Ruby, Emerald, etc.) that persist across sessions.
+- **Glassmorphic Design**: Modern, semi-transparent surfaces with consistent visual depth.
+- **Data-Driven Architecture**: Content is separated from logic using typed static-data files, ready for future CMS integration.
+- **Performance Optimized**: Tree-shakeable icons, optimized fonts, and minimal client-side weight.
 
-To check for code errors, unused imports, or stylistic issues, run:
+---
 
-```bash
-npm run lint
-```
+## 📸 Visuals
 
-**Why use it?**
-- **Catch Bugs early**: Identifies common mistakes (like unescaped characters in JSX).
-- **Clean Code**: Flags unused variables and imports.
-- **Consistency**: Ensures the code follows the project's standards.
-- **Pre-deployment check**: It's recommended to run this before committing or deploying to ensure everything is correct.
+*(Add screenshots or GIFs of your portfolio here to WOW visitors!)*
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> [!TIP]
+> Use high-quality screen recordings of the "Spotlight" effect and theme switching to demonstrate the interactivity.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Installation
 
-## Documentation
+Follow these steps to set up the project locally:
 
-- **[Theme System](./docs/THEME_SYSTEM.md)** - Complete guide to the theming architecture, CSS variables, and creating new themes
-- **[Architecture](./docs/ARCHITECTURE.md)** - Project structure and architectural decisions
-- **[Roadmap](./docs/ROADMAP.md)** - Future enhancements and planned features
+### Requirements
+- **Node.js**: 18.x or higher
+- **npm** or **yarn**
 
-## Learn More
+### Steps
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/atheer.git
+   cd atheer
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Visit the app**:
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📖 Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Customizing Content
+Most of the portfolio content is managed in the `src/static-data/` directory:
+- Update your bio in `bio.ts`.
+- Manage work history in `experiences.ts`.
+- Add new projects in `projects.ts`.
+
+### Project Commands
+- `npm run dev` - Start development server.
+- `npm run build` - Create a production build.
+- `npm run start` - Run the production server.
+- `npm run lint` - Run ESLint for code quality checks.
+
+---
+
+## 🗺️ Roadmap
+
+Check out our full [ROADMAP](./docs/ROADMAP.md) for detailed enhancement plans.
+
+- [x] Phase 1: Core Architecture & Components
+- [/] Phase 2: Interactive Motion & Micro-interactions
+- [ ] Phase 3: Visual Depth & UI Refinement
+- [ ] Phase 4: Performance & SEO Optimization
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! To get started:
+1. Fork the project.
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
+
+---
+
+## 📞 Support & Acknowledgment
+
+- **Support**: Open an issue for bugs or feature requests.
+- **Special Thanks**: Inspired by the work of Brittany Chiang and built with the amazing Next.js ecosystem.
+
+---
+
+## ⚖️ License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## 📁 Internal Documentation
+
+For deep dives into the technical details, visit our [Docs Folder](./docs/):
+- [Architecture Guide](./docs/ARCHITECTURE.md)
+- [Theme System](./docs/THEME_SYSTEM.md)
+- [Styling Guidelines](./docs/STYLING_THEMING.md) *(Coming soon/Consolidated)*
