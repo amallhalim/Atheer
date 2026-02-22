@@ -36,7 +36,7 @@ npm run dev
 ### 3. Coding Standards
 - **TypeScript**: All new code must be fully typed.
 - **Tailwind**: Use theme variables (e.g., `text-primary`) instead of static hex codes.
-- **Linting**: Run `npm run lint` before committing to ensure code quality.
+- **Linting**: We use ESLint 9 to ensure high code quality. Refer to the **[Code Quality Guide](./docs/CODE_QUALITY.md)** for detailed rules and commands. Run `npm run lint` before committing.
 
 ---
 

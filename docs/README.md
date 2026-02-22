@@ -12,6 +12,7 @@ Welcome to the Atheer technical documentation. This directory provides a structu
 | **[Theme System](./THEME_SYSTEM.md)** | Technical spec for dynamic themes & styling standards |
 | **[Features](./FEATURES.md)** | Business logic, workflows, and implementation status |
 | **[Roadmap](./ROADMAP.md)** | Phase-by-phase development goals and enhancements |
+| **[Code Quality](./CODE_QUALITY.md)** | Linting standards and maintenance commands |
 
 ---
 
