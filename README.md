@@ -107,7 +107,13 @@ See the full [ROADMAP](./docs/ROADMAP.md) for details.
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) *(coming soon)* or simply open a PR.
+We welcome contributions! To get started:
+1. Fork the project.
+2. Read our **[Contributing Guide](./CONTRIBUTING.md)** for detailed standards and workflows.
+3. Create your feature branch (`git checkout -b feature/AmazingFeature`).
+4. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+5. Push to the branch (`git push origin feature/AmazingFeature`).
+6. Open a Pull Request.
 
 ---
 

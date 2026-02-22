@@ -22,6 +22,7 @@ Maintaining a high-end portfolio requires strict adherence to our development st
 - **[Naming Conventions](./rules/NAMING_CONVENTIONS.md)**: Case styles for files, functions, and variables.
 - **[Folder Structure](./rules/FOLDER_STRUCTURE.md)**: The "Atheer Way" of organizing code.
 - **[Documentation Policy](./rules/DOCUMENTATION_POLICY.md)**: Rules for keeping this documentation fresh.
+- **[Contribution Guide](../CONTRIBUTING.md)**: How to help move Atheer forward.
 
 ---
 
