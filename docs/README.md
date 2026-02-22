@@ -18,8 +18,8 @@ Welcome to the Atheer documentation. This directory contains all technical guide
 - [Coding Standards](./rules/COMPONENT_GUIDELINES.md)
 - [Naming Conventions](./rules/NAMING_CONVENTIONS.md)
 - [Folder Structure](./rules/FOLDER_STRUCTURE.md)
-- [Theming Guidelines](./rules/THEME_GUIDELINES.md)
 - [Styling Rules](./styling/GUIDELINES.md)
+- [Theme System & Guidelines](./THEME_SYSTEM.md)
 
 ## ✨ Features Detail
 

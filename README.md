@@ -69,16 +69,7 @@ Most of the portfolio content is managed in the `src/static-data/` directory:
 
 ---
 
-## 🗺️ Roadmap
 
-Check out our full [ROADMAP](./docs/ROADMAP.md) for detailed enhancement plans.
-
-- [x] Phase 1: Core Architecture & Components
-- [/] Phase 2: Interactive Motion & Micro-interactions
-- [ ] Phase 3: Visual Depth & UI Refinement
-- [ ] Phase 4: Performance & SEO Optimization
-
----
 
 ## 🤝 Contributing
 

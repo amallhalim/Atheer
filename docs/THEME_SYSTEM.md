@@ -1,35 +1,54 @@
-# Theme System Documentation
+# Theme System & Guidelines
 
-## Overview
+This document provides a complete guide to the application's theming architecture, technical implementation, and the strict guidelines that must be followed to maintain visual consistency.
 
-This document explains the complete theming system for the application. The system is built on **[next-themes](https://github.com/pacocoursey/next-themes)** for state management and persistance, combined with CSS custom properties (variables) mapped to Tailwind utility classes.
+---
 
-## File Structure
+## 🏆 Golden Rules
 
-```
-src/styles/theme/
-├── constants.css      # Theme-agnostic values (border radius, etc.)
-├── light.css          # Light mode color palette
-├── dark.css           # Default dark mode (blue/teal accent)
-├── red.css            # Ruby Red dark theme
-├── green.css          # Emerald Green dark theme
-├── yellow.css         # Golden Yellow dark theme
-├── purple.css         # Royal Purple dark theme
-└── tokens.css         # Maps CSS variables to Tailwind
-```
+1.  **NO Static Colors**:
+    - ❌ `bg-red-500` | `text-[#ff0000]` | `border-gray-200`
+    - ✅ **ALWAYS** use theme variables: `bg-destructive`, `text-primary`, `border-border`.
+2.  **All Colors Must Be Documented**:
+    - If you need a new color, it **MUST** be added to the theme system properly.
+3.  **Tailwind Palette Only**:
+    - When defining color variables in CSS files, you **MUST** use values from the standard Tailwind CSS color palette.
+    - ✅ **Use This**: `#3b82f6` (Blue-500), `#1e293b` (Slate-800)
+    - ❌ **Do NOT Use**: `#3a81f5` (Random variation), `#123456` (Arbitrary hex)
 
-## How It Works
+---
+
+## 🎨 Overview
+
+The system is built on **[next-themes](https://github.com/pacocoursey/next-themes)** for state management and persistence, combined with CSS custom properties (variables) mapped to Tailwind utility classes.
+
+### Available Themes
+| Theme | Value | Primary Color | Use Case |
+| :--- | :--- | :--- | :--- |
+| **Light** | `light` | Black (#000) | Daytime reading |
+| **Dark** | `dark` | Teal (#64ffda) | Default dark mode |
+| **Red** | `red` | Red (#f87171) | Bold, energetic |
+| **Green** | `green` | Green (#4ade80) | Natural, calm |
+| **Yellow** | `yellow` | Yellow (#facc15) | Warm, optimistic |
+| **Purple** | `purple` | Purple (#c084fc) | Creative, luxurious |
+
+---
+
+## 📁 File Structure
+
+Themes are defined and managed within `src/styles/theme/`:
+- `constants.css`: Theme-agnostic values (border radius, font sizes, etc.).
+- `light.css`: Light mode color palette (uses `:root`).
+- `dark.css`: Default dark mode (blue/teal accent).
+- `red.css`, `green.css`, `yellow.css`, `purple.css`: Specialized color themes.
+- `tokens.css`: The "Bridge" that maps CSS variables to Tailwind utility classes.
+
+---
+
+## 🚀 Technical Implementation
 
 ### 1. Theme State Management (`next-themes`)
-
-The application uses the `next-themes` library to handle:
-- Compelling theme switching without flashing
-- Syncing across tabs and windows
-- Detecting system preferences
-- Persisting theme selection to `localStorage`
-
-#### Provider Setup
-The `ThemeProvider` is configured in `src/app/layout.tsx` to use the `data-theme` attribute instead of classes:
+The `ThemeProvider` is configured in `src/app/layout.tsx` to use the `data-theme` attribute:
 
 ```tsx
 <ThemeProvider
@@ -41,64 +60,43 @@ The `ThemeProvider` is configured in `src/app/layout.tsx` to use the `data-theme
 </ThemeProvider>
 ```
 
-> **Note**: `disableTransitionOnChange` prevents transition flashes when switching themes.
-
 #### Preventing Hydration Mismatch
-Because the theme is read from `localStorage` on the client, the server-rendered HTML might differ. To prevent hydration warnings, `suppressHydrationWarning` is added to the `<html>` tag:
-
+To prevent hydration warnings when reading theme from `localStorage`, `suppressHydrationWarning` is added to the `<html>` tag:
 ```tsx
 <html lang="en" dir="ltr" suppressHydrationWarning>
 ```
 
 ### 2. Theme Selection
-
-Themes are controlled by the `data-theme` attribute on the `<html>` element:
-
-```html
-<html data-theme="red">
-  <!-- Your app -->
-</html>
-```
-
-The `ThemeSelector` component uses the `useTheme` hook to read and update the active theme:
+The active theme is controlled by the `data-theme` attribute on the `<html>` element. The `ThemeSelector` component uses the `useTheme` hook:
 
 ```tsx
 import { useTheme } from 'next-themes';
 
 export default function ThemeSelector() {
   const { theme, setTheme } = useTheme();
-  
-  // theme: Current active theme string (e.g. 'dark', 'red')
-  // setTheme: Function to update the theme
-  
   return (
     <Select value={theme} onValueChange={setTheme}>
-      {/* ... items ... */}
+      {/* Theme items */}
     </Select>
   );
 }
 ```
 
 ### 3. CSS Variable Architecture
-
-Each theme file defines a complete set of CSS variables:
-
+Each theme file defines a complete set of CSS variables. Example from `red.css`:
 ```css
-/* Example: red.css */
 [data-theme='red'] {
-  --background: #0f0a0a;        /* Page background */
-  --foreground: #fef2f2;        /* Primary text color */
-  --primary: #f87171;           /* Accent color (buttons, links, etc.) */
-  --card: #1a1414;              /* Card backgrounds */
-  --border: #450a0a;            /* Border colors */
-  /* ... and more */
+  --background: #0f0a0a;
+  --foreground: #fef2f2;
+  --primary: #f87171;
+  --card: #1a1414;
+  --border: #450a0a;
+  /* ... more variables */
 }
 ```
 
-### 4. Tailwind Integration
-
-The `tokens.css` file maps these CSS variables to Tailwind's design system:
-
+### 4. Tailwind Integration (`tokens.css`)
+CSS variables are mapped to Tailwind in `src/styles/theme/tokens.css`:
 ```css
 @theme {
   --color-background: var(--background);
@@ -107,176 +105,69 @@ The `tokens.css` file maps these CSS variables to Tailwind's design system:
 }
 ```
 
-This allows you to use Tailwind classes that automatically adapt to the theme:
+---
 
-```tsx
-<div className="bg-background text-foreground">
-  <button className="text-primary hover:bg-primary/10">
-    Click me
-  </button>
-</div>
-```
+## 🛠️ Developer Guide
 
-## Available Themes
+### How to Add a New Theme
+1.  **Create CSS File**: Create `src/styles/theme/blue.css` and define ALL required variables.
+2.  **Import in globals.css**: `@import '../styles/theme/blue.css';`
+3.  **Add to Dark Variant**: In `src/app/globals.css`, update `@custom-variant dark`:
+    ```css
+    @custom-variant dark (&:where([data-theme='dark'], [data-theme='blue'], ...));
+    ```
+4.  **Update Selector UI**: Add the new theme to `ThemeSelector.tsx`.
 
-| Theme | Value | Primary Color | Use Case |
-|-------|-------|---------------|----------|
-| **Light** | `light` | Black (#000) | Daytime reading |
-| **Dark** | `dark` | Teal (#64ffda) | Default dark mode |
-| **Red** | `red` | Red (#f87171) | Bold, energetic |
-| **Green** | `green` | Green (#4ade80) | Natural, calm |
-| **Yellow** | `yellow` | Yellow (#facc15) | Warm, optimistic |
-| **Purple** | `purple` | Purple (#c084fc) | Creative, luxurious |
+### How to Add a New Color
+1.  **Define Raw Variable**: 
+    - Is it **Adaptive**? Add it to ALL theme files (`light.css`, `dark.css`, `red.css`, etc.).
+    - Is it **Constant**? Add it to `constants.css`.
+2.  **Create Tailwind Token**: Open `tokens.css` and map your new variable inside `@theme`.
+    ```css
+    --color-sidebar-bg: var(--sidebar-bg);
+    ```
+3.  **Usage**: `className="bg-sidebar-bg"`
 
-## CSS Variables Reference
+---
 
-### Core Colors
-- `--background` - Main page background
-- `--foreground` - Primary text color
+## 📋 CSS Variables Reference
 
-### Surface Colors
-- `--card` - Card/panel backgrounds
-- `--card-foreground` - Text on cards
-- `--popover` - Dropdown/modal backgrounds
-- `--popover-foreground` - Text in popovers
+| Category | Variables |
+| :--- | :--- |
+| **Core** | `--background`, `--foreground` |
+| **Surface** | `--card`, `--card-foreground`, `--popover`, `--popover-foreground` |
+| **Action** | `--primary`, `--primary-foreground`, `--secondary`, `--secondary-foreground`, `--accent`, `--accent-foreground`, `--destructive` |
+| **UI** | `--muted`, `--muted-foreground`, `--border`, `--input`, `--ring` |
+| **Special** | `--spotlight-glow` (RGB values, e.g., `248, 113, 113`) |
 
-### Action Colors
-- `--primary` - Main accent color (buttons, links, highlights)
-- `--primary-foreground` - Text on primary-colored elements
-- `--secondary` - Secondary accent color
-- `--secondary-foreground` - Text on secondary elements
-- `--accent` - Tertiary accent color
-- `--accent-foreground` - Text on accent elements
-- `--destructive` - Error/danger color
+---
 
-### UI Elements
-- `--muted` - Muted backgrounds
-- `--muted-foreground` - Muted text
-- `--border` - Border colors
-- `--input` - Input field borders
-- `--ring` - Focus ring color
-
-### Specialized
-- `--spotlight-glow` - RGB values for spotlight effect (e.g., `248, 113, 113`)
-
-## Creating a New Theme
-
-To add a new theme:
-
-1. **Create a new CSS file** (e.g., `blue.css`):
-
-```css
-/* 🔵 BLUE THEME */
-[data-theme='blue'] {
-  --background: #0a1929;
-  --foreground: #e3f2fd;
-  --primary: #42a5f5;
-  --primary-foreground: #0d47a1;
-  /* ... define all required variables */
-}
-```
-
-2. **Import it in `globals.css`**:
-
-```css
-@import '../styles/theme/blue.css';
-```
-
-3. **Add to the dark variant** in `globals.css`:
-
-```css
-@custom-variant dark (&:where(
-  [data-theme='dark'],
-  [data-theme='blue'],  /* ← Add here */
-  /* ... other themes */
-  [data-theme='blue'] *, /* ← And here */
-));
-```
-
-4. **Add to ThemeSelector**:
-
-```tsx
-const items = [
-  // ... existing themes
-  { label: "Ocean Blue", value: "blue", color: "#42a5f5" },
-];
-```
-
-## Best Practices
-
-### ✅ DO
-
-- Use theme variables for all colors: `text-primary` instead of `text-cyan-400`
-- Define ALL required CSS variables in each theme file
-- Use semantic variable names (`--primary`, not `--teal-color`)
-- Test your theme in both light and dark contexts
-
-### ❌ DON'T
-
-- Hardcode colors: `text-[#64ffda]` ❌
-- Mix theme variables with arbitrary colors
-- Skip variables - each theme needs a complete set
-- Use `dark:` classes for theme-specific logic (use theme variables instead)
-
-## Troubleshooting
+## 🔍 Troubleshooting
 
 ### Theme not applying?
-
-1. Check the `data-theme` attribute on `<html>` in DevTools
-2. Verify the theme file is imported in `globals.css`
-3. Ensure the theme is listed in the `@custom-variant dark` selector
-4. Clear localStorage: `localStorage.removeItem('theme')`
+1. Check the `data-theme` attribute on `<html>` in DevTools.
+2. Verify the theme file is imported in `globals.css`.
+3. Ensure the theme is listed in the `@custom-variant dark` selector.
+4. Clear localStorage: `localStorage.removeItem('theme')`.
 
 ### Colors not changing on hover?
-
-Make sure you're using theme variables, not hardcoded colors:
-
-```css
-/* ❌ Wrong */
-.nav-link {
-  @apply hover:text-cyan-400;
-}
-
-/* ✅ Correct */
-.nav-link {
-  @apply hover:text-primary;
-}
-```
+Avoid hardcoded Tailwind colors:
+- ❌ `.nav-link { @apply hover:text-cyan-400; }`
+- ✅ `.nav-link { @apply hover:text-primary; }`
 
 ### Dark mode classes not working?
-
 Verify your theme is included in the `@custom-variant dark` configuration in `globals.css`.
 
-## Technical Details
+---
 
-### CSS Specificity
+## ⚙️ Technical Details
 
-Theme files are imported in this order:
+- **Specificity**: Theme files are imported in a specific order (`constants` → `light` → `dark` → `colors` → `tokens`). Later imports override earlier ones for equal specificity.
+- **Performance**: Theme switching is instant via hardware-accelerated CSS variables with minimal runtime overhead.
 
-1. `constants.css` - Base values
-2. `light.css` - Light mode (`:root` selector)
-3. `dark.css` - Dark mode (`[data-theme='dark']`)
-4. Color themes - `red.css`, `green.css`, etc. (`[data-theme='red']`)
-5. `tokens.css` - Tailwind mappings
+---
 
-Later imports override earlier ones when selectors have equal specificity.
-
-### Performance
-
-- Theme switching is instant (no page reload)
-- CSS variables are hardware-accelerated
-- Minimal runtime overhead
-- Theme preference persists via `localStorage`
-
-## Related Files
-
-- [`src/app/globals.css`](../src/app/globals.css) - Main stylesheet with theme imports
-- [`src/components/layout/ThemeSelector.tsx`](../src/components/layout/ThemeSelector.tsx) - Theme switcher UI
-- [`src/styles/base.css`](../src/styles/base.css) - Global base styles
-- [`src/styles/theme/`](../src/styles/theme/) - Theme CSS files
-
-## Further Reading
-
-- [CSS Custom Properties (MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
-- [Tailwind CSS v4 Theming](https://tailwindcss.com/docs/theme)
-- [Data Attributes (MDN)](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes)
+## 📁 Related Files
+- [`src/app/globals.css`](../src/app/globals.css) - Main stylesheet
+- [`src/styles/theme/`](../src/styles/theme/) - Theme CSS definitions
+- [`src/components/layout/ThemeSelector.tsx`](../src/components/layout/ThemeSelector.tsx) - Theme switcher component
