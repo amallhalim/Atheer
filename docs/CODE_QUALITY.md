@@ -9,8 +9,15 @@ To maintain the premium standard of the Atheer codebase, we use **ESLint 9** wit
 We use a unified configuration file: [**`eslint.config.mjs`**](../eslint.config.mjs). This single source of truth handles:
 - **Core JavaScript**: Base rules for logical correctness.
 - **TypeScript**: Strict type checking and TS-specific best practices.
-- **React**: Hook usage validation and JSX security.
-- **Next.js**: performance and SEO optimization rules (Core Web Vitals).
+- [**React**](https://reactjs.org/): Hook usage validation and JSX security.
+- [**Next.js**](https://nextjs.org/): Performance and SEO optimization rules (Core Web Vitals).
+
+### 3. Component Variants (Tailwind Variants)
+Avoid complex conditional logic inside `className` strings. Instead, use **`tailwind-variants` (TV)**. This ensures that:
+- Styles are centralized and easy to audit.
+- Variants (sizes, colors, states) are type-safe.
+- IntelliSense works perfectly inside the `tv()` function (ensure `.vscode/settings.json` is configured).
+- The component remains readable and maintainable.
 
 ---
 

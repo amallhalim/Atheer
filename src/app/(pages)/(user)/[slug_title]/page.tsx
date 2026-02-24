@@ -7,6 +7,7 @@ import Projects from './components/Projects'
 import SocialLinks from './components/SocialLinks'
 import { HiOutlineArrowDownTray } from "react-icons/hi2";
 import Button from '@/components/button/Button'
+// import { Button } from '@/components/ui/button'
 
 export default function UserProfile() {
     return (
@@ -15,10 +16,12 @@ export default function UserProfile() {
                 <div className=" h-fit lg:h-full py-8 lg:py-16 flex flex-col justify-start space-y-12 
                     lg:bg-slate-900/10 lg:backdrop-blur-sm lg:border-x lg:border-slate-800/30 lg:px-8">
                     <div className="space-y-8">
+
                         <NameSection />
                         <NavLinks />
                         <SocialLinks />
-                        <Button label="View Full Resume" icon={<HiOutlineArrowDownTray />} />
+                        <Button label="View Full Resume" icon={<HiOutlineArrowDownTray />} iconPlacement="right" color="primary" />
+
                     </div>
                 </div>
             </div>

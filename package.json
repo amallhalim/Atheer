@@ -22,7 +22,8 @@
     "react-dom": "19.2.3",
     "react-icons": "^5.5.0",
     "shadcn-ui": "^0.9.5",
-    "tailwind-merge": "^3.4.0"
+    "tailwind-merge": "^3.4.0",
+    "tailwind-variants": "^3.2.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
