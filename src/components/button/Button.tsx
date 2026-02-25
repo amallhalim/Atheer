@@ -53,23 +53,26 @@ const buttonStyles = tv({
             glass: "bg-white/10 backdrop-blur-md border border-white/20 shadow-xl",
             link: "bg-transparent border-transparent hover:underline px-0 py-0 h-auto",
         },
-
         size: {
-            sm: "px-3 py-1.5 text-sm",
-            md: "px-4 py-2 text-base",
-            lg: "px-6 py-3 text-lg",
+            sm: "h-8 px-3 text-xs",
+            md: "h-10 px-4 text-sm",
+            lg: "h-12 px-6 text-base",
+            xl: "h-14 px-8 text-lg",
         },
-        fullWidth: { true: "w-full" },
         rounded: {
             none: "rounded-none",
             sm: "rounded-sm",
             md: "rounded-md",
             lg: "rounded-lg",
+            xl: "rounded-xl",
             full: "rounded-full",
         },
+        fullWidth: {
+            true: "w-full",
+        },
         isIconOnly: {
-            true: "p-2 aspect-square",
-        }
+            true: "aspect-square p-0",
+        },
     },
 
     // ZERO complex logic! 
