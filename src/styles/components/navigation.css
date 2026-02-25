@@ -3,7 +3,7 @@
   @apply cursor-pointer hover:text-primary;
   
   /* Line Default visuals  */
-  @apply before:content-[''] before:inline-block before:h-px before:w-8  before:bg-slate-500;
+  @apply before:content-[''] before:inline-block before:h-px before:w-8  before:bg-muted-foreground/30;
   
   /* & hover */
   @apply  hover:before:w-16 hover:before:bg-primary;
@@ -16,7 +16,7 @@
 
 /* Base link style */
 .link {
-  @apply cursor-pointer text-slate-400 hover:text-primary transition-colors duration-300 transform font-medium;
+  @apply cursor-pointer text-muted-foreground hover:text-primary transition-colors duration-300 transform font-medium;
 }
 
 /* Active state for link:

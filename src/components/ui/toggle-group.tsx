@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { type VariantProps } from "class-variance-authority"
+import { type VariantProps } from "tailwind-variants"
 import { ToggleGroup as ToggleGroupPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
@@ -68,10 +68,10 @@ function ToggleGroupItem({
         toggleVariants({
           variant: context.variant || variant,
           size: context.size || size,
+          className
         }),
         "w-auto min-w-0 shrink-0 px-3 focus:z-10 focus-visible:z-10",
-        "data-[spacing=0]:rounded-none data-[spacing=0]:shadow-none data-[spacing=0]:first:rounded-l-md data-[spacing=0]:last:rounded-r-md data-[spacing=0]:data-[variant=outline]:border-l-0 data-[spacing=0]:data-[variant=outline]:first:border-l",
-        className
+        "data-[spacing=0]:rounded-none data-[spacing=0]:shadow-none data-[spacing=0]:first:rounded-l-md data-[spacing=0]:last:rounded-r-md data-[spacing=0]:data-[variant=outline]:border-l-0 data-[spacing=0]:data-[variant=outline]:first:border-l"
       )}
       {...props}
     >
