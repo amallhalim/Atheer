@@ -253,6 +253,7 @@ export default function Button({
                 aria-disabled={disabled || loading}
                 className={finalClassName}
                 {...props}
+                aria-label={label}
             >
                 {renderContent()}
             </Link>
@@ -268,6 +269,7 @@ export default function Button({
             {...props}
             aria-busy={loading}
             aria-disabled={disabled || loading}
+            aria-label={label}
         >
             {renderContent()}
         </button>
