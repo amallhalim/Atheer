@@ -91,6 +91,15 @@ graph LR
 All visual decisions, including our **Theme Choice**, **Tailwind Integration**, and **CSS Conventions**, are documented in:
 - **[Theme System & Guidelines](./THEME_SYSTEM.md)**
 
+#### ✅ Difference: CSS Modules vs Normal CSS File
+
+| Feature | Normal CSS File | CSS Modules |
+| :--- | :--- | :--- |
+| **Scope** | Global 🌍 | Local to component 📦 |
+| **Class conflict** | Possible ❌ | Almost impossible ✅ |
+| **Maintainability** | Harder in large projects | Better for scalable apps |
+| **Naming** | Manual | Automatically hashed |
+
 ---
 
 ## 🧠 Senior Design Considerations
