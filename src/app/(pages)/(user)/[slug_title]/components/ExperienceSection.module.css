@@ -1,3 +1,5 @@
+@reference "../../../../globals.css";
+
 /* Base bullet list style */
 .listCustom {
   @apply list-none ml-2 space-y-2 mb-6;
