@@ -1,6 +1,10 @@
 .tracking-in-contract-bck {
     -webkit-animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-    animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: 
+        tracking-in-contract-bck /* 1. Name: The @keyframes being used */
+        1s                       /* 2. Duration: How long the animation lasts */
+        cubic-bezier(0.215, 0.610, 0.355, 1.000) /* 3. Timing: The "speed curve" (easing) */
+        both;                    /* 4. Fill Mode: Keeps the final state when final styles after animation ends */
 }
 
 .focus-in-expand {
