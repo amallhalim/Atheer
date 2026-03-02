@@ -220,4 +220,6 @@ We follow a **Modular Orchestrator Pattern** to keep Tailwind clean:
 ## 📁 Related Files
 - [`src/app/globals.css`](../src/app/globals.css) - Main stylesheet
 - [`src/styles/theme/`](../src/styles/theme/) - Theme CSS definitions
+- [`src/styles/animations/`](../src/styles/animations/) - Animation definitions
 - [`src/components/layout/ThemeSelector.tsx`](../src/components/layout/ThemeSelector.tsx) - Theme switcher component
+- [`docs/ANIMATION_SYSTEM.md`](./ANIMATION_SYSTEM.md) - Animation system guides
