@@ -1,20 +1,131 @@
+﻿/* ================================================================
+ * ANIMATION UTILITIES
+animation: 
+[ name ] 
+[ duration ] 
+[ timing-function ] 
+[ delay ] 
+[ fill-mode ];
+ * ================================================================ */
+
+
+/* ----------------------------------------
+ * 1. ANIMATION CLASSES (What happens)
+ *
+ * Each class triggers a @keyframes animation defined in keyframes.css.
+ * They include a default duration and easing. You can override
+ * the duration with .anim-fast / .anim-normal / .anim-slow,
+ * and the delay with .anim-delay-*.
+ * ---------------------------------------- */
+
 .tracking-in-contract-bck {
     -webkit-animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-    animation: 
+    animation:
         tracking-in-contract-bck /* 1. Name: The @keyframes being used */
         1s                       /* 2. Duration: How long the animation lasts */
         cubic-bezier(0.215, 0.610, 0.355, 1.000) /* 3. Timing: The "speed curve" (easing) */
         both;                    /* 4. Fill Mode: Keeps the final state when final styles after animation ends */
 }
 
+/* focus-in-expand
+ * → Starts blurry and cramped, then clears up and spreads out.
+ * Default: 0.8s duration, no delay */
 .focus-in-expand {
-    -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s both;
-    animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s both;
+    -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+/* fade-in-bottom
+ * → Smoothly slides up from below while fading in.
+ * Default: 0.6s duration, no delay */
 .fade-in-bottom {
-    -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.8s both;
-    animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.8s both;
+    -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 
+/* ----------------------------------------
+ * 2. ANIMATION DELAY UTILITIES (When it starts)
+ *
+ * Controls when the animation begins relative to page load.
+ * Use these to create staggered entrance effects.
+ *
+ * Usage:
+ *   <h1 class="fade-in-bottom">                → starts immediately
+ *   <h2 class="fade-in-bottom anim-delay-200"> → starts after 0.2s
+ * ---------------------------------------- */
+.anim-delay-100 { animation-delay: 0.1s; }
+.anim-delay-200 { animation-delay: 0.2s; }
+.anim-delay-300 { animation-delay: 0.3s; }
+.anim-delay-400 { animation-delay: 0.4s; }
+.anim-delay-500 { animation-delay: 0.5s; }
+.anim-delay-600 { animation-delay: 0.6s; }
+.anim-delay-700 { animation-delay: 0.7s; }
+
+/* ----------------------------------------
+ * 3. ANIMATION DURATION UTILITIES (How long it lasts)
+ *
+ * Overrides the default duration set in the animation class.
+ * Each animation has its own sensible default (see above),
+ * so only add these when you need a different speed.
+ *
+ * Usage:
+ *   <div class="fade-in-bottom">           → default speed (0.6s)
+ *   <div class="fade-in-bottom anim-fast"> → faster (0.3s)
+ * ---------------------------------------- */
+.anim-fast   { animation-duration: 0.3s; }
+.anim-normal { animation-duration: 0.6s; }
+.anim-slow   { animation-duration: 1s;   }
+
+/* ----------------------------------------
+ * 4. ANIMATION ITERATION UTILITIES (How many times)
+ *
+ * Controls how many times the animation plays.
+ * Default is once. Use .anim-loop for continuous animations
+ * like spinners, pulses, or background effects.
+ *
+ * Usage:
+ *   <div class="pulse anim-loop">  → loops forever
+ *   <div class="pulse anim-twice"> → plays 2 times then stops
+ * ---------------------------------------- */
+.anim-once  { animation-iteration-count: 1; }
+.anim-twice { animation-iteration-count: 2; }
+.anim-loop  { animation-iteration-count: infinite; }
+
+/* ----------------------------------------
+ * 5. ANIMATION PLAY STATE UTILITIES (Pause / Resume)
+ *
+ * Pauses or resumes the animation on demand.
+ * Useful for hover effects or scroll-triggered animations.
+ *
+ * Usage:
+ *   <div class="fade-in-bottom anim-paused hover:anim-running">
+ *   → animation paused by default, starts on hover
+ * ---------------------------------------- */
+.anim-paused  { animation-play-state: paused; }
+.anim-running { animation-play-state: running; }
+
+/* ----------------------------------------
+ * 6. ANIMATION FILL MODE UTILITIES (Before/After state)
+ *
+ * Controls what styles the element has BEFORE the animation
+ * starts and AFTER it ends.
+ *
+ * none     → Ignores keyframe styles entirely outside the animation.
+ *            Element is visible before, plays animation, then snaps back.
+ *            ⚠ Can cause ugly flashes with delayed animations.
+ *
+ * forwards → After animation ends, element KEEPS the last keyframe style.
+ *            But during delay, element still shows its normal style.
+ *
+ * both     → Best of both worlds:
+ *            BEFORE: applies first keyframe during delay (e.g. opacity: 0)
+ *            AFTER:  keeps last keyframe styles (e.g. opacity: 1)
+ *            ✅ Recommended when using .anim-delay-* classes.
+ *
+ * All animation classes already use "both" as default.
+ * Only use these utilities if you need to override that behavior.
+ * ---------------------------------------- */
+.anim-fill-none     { animation-fill-mode: none; }
+.anim-fill-forwards { animation-fill-mode: forwards; }
+.anim-fill-both     { animation-fill-mode: both; }
