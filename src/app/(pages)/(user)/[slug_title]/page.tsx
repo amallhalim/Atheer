@@ -18,18 +18,30 @@ export default function UserProfile() {
                     <div className="space-y-8">
 
                         <NameSection />
-                        <NavLinks />
-                        <SocialLinks />
-                        <Button label="View Full Resume" icon={<HiOutlineArrowDownTray />} iconPlacement="right" color="primary" />
+                        <div className="fade-in-bottom anim-delay-100">
+                            <NavLinks />
+                        </div>
+                        <div className="fade-in-bottom anim-delay-200 mt-4">
+                            <SocialLinks />
+                        </div>
+                        <div className="fade-in-bottom anim-delay-300 mt-4">
+                            <Button label="View Full Resume" icon={<HiOutlineArrowDownTray />} iconPlacement="right" color="primary" />
+                        </div>
 
                     </div>
                 </div>
             </div>
 
             <div className="lg:w-1/2 space-y-16 lg:space-y-24 py-8 lg:py-16 lg:h-full lg:overflow-y-auto" style={{ scrollbarWidth: "none" }}>
-                <ShortBio />
-                <ExperienceSection />
-                <Projects />
+                <div className="fade-in-bottom anim-delay-400">
+                    <ShortBio />
+                </div>
+                <div className="fade-in-bottom anim-delay-500">
+                    <ExperienceSection />
+                </div>
+                <div className="fade-in-bottom anim-delay-600">
+                    <Projects />
+                </div>
             </div>
         </div>
     )

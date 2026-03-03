@@ -19,7 +19,7 @@ animation:
  * ---------------------------------------- */
 
 .tracking-in-contract-bck {
-    -webkit-animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+
     animation:
         tracking-in-contract-bck /* 1. Name: The @keyframes being used */
         1s                       /* 2. Duration: How long the animation lasts */
@@ -29,9 +29,19 @@ animation:
 
 /* focus-in-expand
  * → Starts blurry and cramped, then clears up and spreads out.
- * Default: 0.8s duration, no delay */
+ * Default: 0.8s duration, no delay
+ *
+ * ⚠️ PERFORMANCE WARNING:
+ * This animation uses filter: blur(), which forces the browser to REPAINT
+ * every single frame. Unlike transform/opacity (which run on the GPU compositor
+ * thread), blur() runs on the CPU main thread — causing frame drops on
+ * low-end devices.
+ *
+ * ✅ SAFE:   Small elements only — icons, short headings, badges
+ * ❌ AVOID:  Large containers, full sections, cards, or any element
+ *            that covers a significant portion of the screen */
 .focus-in-expand {
-    -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
     animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
@@ -39,8 +49,8 @@ animation:
  * → Smoothly slides up from below while fading in.
  * Default: 0.6s duration, no delay */
 .fade-in-bottom {
-    -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+
+    animation: fade-in-bottom 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 
@@ -129,3 +139,4 @@ animation:
 .anim-fill-none     { animation-fill-mode: none; }
 .anim-fill-forwards { animation-fill-mode: forwards; }
 .anim-fill-both     { animation-fill-mode: both; }
+
