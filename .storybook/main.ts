@@ -12,6 +12,11 @@ const config: StorybookConfig = {
     "@storybook/addon-docs",
     "@storybook/addon-onboarding"
   ],
+  "docs": {
+    //👇 See the table below for the list of supported options
+    "defaultName": 'Documentation',
+    "docsMode": true,
+  },
   "framework": "@storybook/nextjs-vite",
   "staticDirs": [
     "..\\public"

@@ -1,11 +1,16 @@
 import type { Preview } from '@storybook/nextjs-vite'
 
 const preview: Preview = {
+  tags: ['autodocs'],
+
   parameters: {
+    docs: {
+      toc: true, // 👈 Enables the table of contents
+    },
     controls: {
       matchers: {
-       color: /(background|color)$/i,
-       date: /Date$/i,
+        color: /(background|color)$/i,
+        date: /Date$/i,
       },
     },
 
