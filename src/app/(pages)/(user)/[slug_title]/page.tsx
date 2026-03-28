@@ -14,7 +14,7 @@ export default function UserProfile() {
         <div className="container flex flex-col md:flex-row  mx-auto px-6 md:px-12 lg:px-24   gap-8 lg:gap-16 lg:h-full">
             <div className="lg:w-1/2 flex flex-col justify-start shrink-0  lg:h-full">
                 <div className=" h-fit lg:h-full py-8 lg:py-16 flex flex-col justify-start space-y-12 
-                    lg:bg-slate-900/10 lg:backdrop-blur-sm lg:border-x lg:border-slate-800/30 lg:px-8">
+                    lg:bg-black/10 dark:lg:bg-slate-900/10 lg:backdrop-blur-sm lg:border-x lg:border-black/10 dark:lg:border-slate-800/30 lg:px-8">
                     <div className="space-y-8">
 
                         <NameSection />
@@ -25,8 +25,13 @@ export default function UserProfile() {
                             <SocialLinks />
                         </div>
                         <div className="fade-in-bottom anim-delay-300 mt-4">
-                            <Button label="View Full Resume" icon={<HiOutlineArrowDownTray />} iconPlacement="right" color="primary" />
+                            <a href="/assets/files/Amal-Halim_CV.pdf" download="Amal-Halim_CV.pdf">
+                                <Button label="View Full Resume" icon={<HiOutlineArrowDownTray />} iconPlacement="right" color="primary" >
+                                    View Full Resume
+                                </Button>
+                            </a>
                         </div>
+
 
                     </div>
                 </div>
