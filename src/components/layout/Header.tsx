@@ -8,11 +8,11 @@ export default function Header() {
          px-4 md:px-8 shrink-0 border-b border-border/40 
          bg-background/60 backdrop-blur-xl supports-backdrop-filter:bg-background/30">
             <Link href="/" className="group flex items-center gap-2.5">
-                <div className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
-                    <p className="text-black ">A</p>
-                    <div className="absolute inset-0 rounded-lg bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
+                    <p className="font-bold text-lg drop-shadow-sm">A</p>
+                    <div className="absolute inset-0 rounded-lg bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <span className="bg-linear-to-br from-foreground to-foreground/60 bg-clip-text text-transparent text-lg font-bold tracking-tight transition-colors duration-300 group-hover:from-primary group-hover:to-primary/70">
+                <span className="bg-linear-to-br from-foreground to-foreground/70 bg-clip-text text-transparent text-xl font-extrabold tracking-tight transition-all duration-300 group-hover:from-primary group-hover:to-primary/80">
                     Atheer
                 </span>
             </Link>

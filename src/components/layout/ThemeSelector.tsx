@@ -41,8 +41,8 @@ export default function ThemeSelector() {
         return null
     }
     return (
-        <Select value={theme} onValueChange={setTheme}>
-            <SelectTrigger className="w-[140px] justify-between">
+        <Select value={theme} onValueChange={setTheme} >
+            <SelectTrigger className="w-[140px] justify-between border-transparent focus:ring-0 shadow-none">
                 <div className="flex items-center gap-2">
                     <SelectValue placeholder="Theme" />
                 </div>
