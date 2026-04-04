@@ -10,8 +10,10 @@ Welcome to the Atheer technical documentation. This directory provides a structu
 | :--- | :--- |
 | **[Architecture](./ARCHITECTURE.md)** | Tech stack, system design, and data lifecycle |
 | **[Theme System](./THEME_SYSTEM.md)** | Technical spec for dynamic themes & styling standards |
+| **[Animation System](./ANIMATION_SYSTEM.md)** | Guidelines for professional entrance and motion effects |
 | **[Features](./FEATURES.md)** | Business logic, workflows, and implementation status |
 | **[Roadmap](./ROADMAP.md)** | Phase-by-phase development goals and enhancements |
+| **[Code Quality](./CODE_QUALITY.md)** | Linting standards and maintenance commands |
 
 ---
 
@@ -23,6 +25,7 @@ Maintaining a high-end portfolio requires strict adherence to our development st
 - **[Folder Structure](./rules/FOLDER_STRUCTURE.md)**: The "Atheer Way" of organizing code.
 - **[Documentation Policy](./rules/DOCUMENTATION_POLICY.md)**: Rules for keeping this documentation fresh.
 - **[Contribution Guide](../CONTRIBUTING.md)**: How to help move Atheer forward.
+- **[AI Interaction Rules](./AI_GUIDELINES.md)**: Guidelines for AI-assisted development.
 
 ---
 

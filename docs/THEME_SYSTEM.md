@@ -22,6 +22,13 @@ This document provides a complete guide to the application's theming architectur
 
 The system is built on **[next-themes](https://github.com/pacocoursey/next-themes)** for state management and persistence, combined with CSS custom properties (variables) mapped to Tailwind utility classes.
 
+### Fixed vs. Adaptive Colors
+
+Our system distinguishes between two types of tokens:
+
+1.  **Fixed Colors (Global)**: Statically defined in `constants.css`. These **never change**, regardless of the active theme (e.g., Success green, Error red, Brand primary).
+2.  **Adaptive Colors (Dynamic)**: Defined in individual theme files (`light.css`, `dark.css`). These **shift values** when the user swaps themes (e.g., Background, Foreground, Muted).
+
 ### Available Themes
 | Theme | Value | Primary Color | Use Case |
 | :--- | :--- | :--- | :--- |
@@ -119,14 +126,25 @@ CSS variables are mapped to Tailwind in `src/styles/theme/tokens.css`:
 4.  **Update Selector UI**: Add the new theme to `ThemeSelector.tsx`.
 
 ### How to Add a New Color
-1.  **Define Raw Variable**: 
-    - Is it **Adaptive**? Add it to ALL theme files (`light.css`, `dark.css`, `red.css`, etc.).
-    - Is it **Constant**? Add it to `constants.css`.
-2.  **Create Tailwind Token**: Open `tokens.css` and map your new variable inside `@theme`.
+
+#### 1. Adaptive Colors (Change per Theme)
+Use these for branding and interface elements that should feel different in Light/Dark modes.
+1.  **Define Variable**: Add the variable to **ALL** theme files (`light.css`, `dark.css`, `red.css`, etc.) with theme-specific values.
+2.  **Map Token**: Open `tokens.css` and map it in the **Adaptive/Theme-Specific** section of `@theme`.
     ```css
     --color-sidebar-bg: var(--sidebar-bg);
     ```
-3.  **Usage**: `className="bg-sidebar-bg"`
+
+#### 2. Fixed Colors (Global Across All Themes)
+Use these for semantic feedback (success, error) or strict brand elements that must never change.
+1.  **Define Variable**: Add the variable to `constants.css` in the `:root` block.
+    ```css
+    --brand-gold: #ffd700;
+    ```
+2.  **Map Token**: Open `tokens.css` and map it in the **Fixed/Static Tokens** section of `@theme`.
+    ```css
+    --color-gold: var(--brand-gold);
+    ```
 
 ---
 
@@ -202,4 +220,6 @@ We follow a **Modular Orchestrator Pattern** to keep Tailwind clean:
 ## 📁 Related Files
 - [`src/app/globals.css`](../src/app/globals.css) - Main stylesheet
 - [`src/styles/theme/`](../src/styles/theme/) - Theme CSS definitions
+- [`src/styles/animations/`](../src/styles/animations/) - Animation definitions
 - [`src/components/layout/ThemeSelector.tsx`](../src/components/layout/ThemeSelector.tsx) - Theme switcher component
+- [`docs/ANIMATION_SYSTEM.md`](./ANIMATION_SYSTEM.md) - Animation system guides

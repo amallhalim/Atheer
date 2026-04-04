@@ -17,11 +17,11 @@
   --secondary-foreground: #fef2f2;
   --accent: #450a0a;
   --accent-foreground: #f87171;
-  --destructive: #ef4444;
+  --destructive: #f87171;
 
   /* --- UI Elements --- */
   --muted: #1a1414;
-  --muted-foreground: #991b1b;
+  --muted-foreground: #fca5a5;
   --border: #450a0a;
   --input: #450a0a;
   --ring: #f87171;

@@ -56,8 +56,30 @@ graph LR
 - **Why**: Handles **official brand logos** that are being deprecated in Lucide (e.g., Instagram, X/Twitter).
 - **Usage**: Optimized imports from collections (e.g., `si` for SimpleIcons).
 
+### [Radix UI Primitives](https://www.radix-ui.com/primitives) (Headless Components)
+- **Why**: 
+  - **Headless & Unstyled**: Provides 100% control over design (Tailwind) while Radix handles the "brains" (logic).
+  - **A11y-First**: Built with WAI-ARIA standards. Handles keyboard navigation, screen reader support, and focus management (trapping/restoration) automatically.
+  - **Polymorphism**: The `Slot` component allows shared styles to be applied to any child element (e.g., styling a Next.js `Link` exactly like a `Button`).
+- **When to use**:
+  - For complex interactive elements like **Dialogs, Popovers, Tabs, Accordions, and Selects**.
+  - When the project requires **high accessibility compliance** (WCAG).
+  - When standard HTML elements (like `<select>`) cannot be styled to meet premium design requirements.
+
+### [Next.js Link](https://nextjs.org/docs/app/api-reference/components/link) (Navigation)
+- **Why**: Optimized client-side navigation, prefetching, and SEO handling.
+- **When to use**:
+  - **Internal Navigation**: Always use `<Link>` for moving between routes within the app.
+  - **External Links**: Use native `<a>` tags with `rel="noopener noreferrer"` for external domains.
+- **Link vs Button Pattern**:
+  - **Use a Link**: If the action changes the URL or moves the user to a different page/section.
+  - **Use a Button**: If the action performs a function (submit, toggle, open modal, fetch data) without changing the route.
+  - **Polymorphic Style**: In this project, we use the `asChild` pattern so a `<Link>` can visually appear as a `<Button>` while maintaining correct HTML semantics.
+  https://www.radix-ui.com/primitives/docs
+
 ### [shadcn/ui](https://ui.shadcn.com/) (UI Components)
-- **Why**: Low-level accessibility (Radix UI) combined with full styling control. 
+- **Why**: A collection of high-quality components built using **Radix UI** primitives and styled with **Tailwind CSS**.
+- **Philosophy**: It is not a library; code is owned and customized directly in the project.
 - **Storage**: Components reside in **`/src/components/ui`**.
 
 ---
@@ -68,6 +90,15 @@ graph LR
 
 All visual decisions, including our **Theme Choice**, **Tailwind Integration**, and **CSS Conventions**, are documented in:
 - **[Theme System & Guidelines](./THEME_SYSTEM.md)**
+
+#### ✅ Difference: CSS Modules vs Normal CSS File
+
+| Feature | Normal CSS File | CSS Modules |
+| :--- | :--- | :--- |
+| **Scope** | Global 🌍 | Local to component 📦 |
+| **Class conflict** | Possible ❌ | Almost impossible ✅ |
+| **Maintainability** | Harder in large projects | Better for scalable apps |
+| **Naming** | Manual | Automatically hashed |
 
 ---
 

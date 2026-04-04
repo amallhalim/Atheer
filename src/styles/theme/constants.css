@@ -9,5 +9,9 @@
   --radius: 0.625rem;
 
   /* --- Static Brand Colors --- */
+  --success: #16a34a;
+  --warning: #ca8a04;
+  --error: #dc2626;
+  --info: #2563eb;
   /* Add other constant colors (like Brand Gold, pure Black, etc.) here */
 }

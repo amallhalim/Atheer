@@ -3,14 +3,16 @@ import React from 'react'
 
 export default function page() {
     return (
-        <div className='flex flex-col items-center justify-center   h-full  p-4 text-center space-y-8 '>
+        <div className='flex flex-col items-center justify-center   h-full  p-4 text-center space-y-8'>
             <div className="space-y-4">
-                <h1 className='text-4xl font-bold tracking-tight sm:text-6xl text-foreground'>
+
+                <h2 className='tracking-in-contract-bck text-4xl font-bold tracking-tight sm:text-6xl text-foreground'>
                     Welcome to Atheer
-                </h1>
+                </h2>
                 <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
                     A professional portfolio and showcase of modern web development.
                 </p>
+
             </div>
             <Link
                 href='/amal'

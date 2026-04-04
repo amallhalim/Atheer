@@ -56,6 +56,8 @@
 @import '../styles/components/cards.css';
 @import '../styles/components/lists.css';
 @import '../styles/layout.css';
+@import '../styles/animations/keyframes.css';
+@import '../styles/animations/utilities.css';
 
 /* --- 3. Global Base Rules --- */
 @import '../styles/base.css';
