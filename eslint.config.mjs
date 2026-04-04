@@ -1,7 +1,7 @@
 // For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
 import storybook from "eslint-plugin-storybook";
 
-import { defineConfig, globalIgnores } from "eslint/config";
+import { defineConfig } from "eslint/config";
 import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
@@ -26,11 +26,14 @@ pluginReact.configs.flat.recommended, // 4. Next.js Specific Rules
     "react/react-in-jsx-scope": "off", // Not needed in Next.js
     "react/prop-types": "off",          // We use TypeScript instead
   },
-}, // 5. Global Ignores
-globalIgnores([
-  ".next/**",
-  "out/**",
-  "build/**",
-  "next-env.d.ts",
-  "node_modules/**",
-]), ...storybook.configs["flat/recommended"]]);
+  }, // 5. Global Ignores
+  {
+    ignores: [
+      "**/.next/**",
+      "**/out/**",
+      "**/build/**",
+      "**/storybook-static/**",
+      "**/node_modules/**",
+      "next-env.d.ts",
+    ]
+  }, ...storybook.configs["flat/recommended"]]);

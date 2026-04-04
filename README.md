@@ -5,7 +5,9 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-purple?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
 [![Shadcn UI](https://img.shields.io/badge/Shadcn_UI-Latest-black?style=for-the-badge&logo=shadcnui)](https://ui.shadcn.com/)
+<!-- STORYBOOK (commented out — not ready to expose yet)
 [![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)](https://storybook.js.org/)
+-->
 
 
 **Atheer** is a premium, cinematic portfolio platform built with Next.js. It's designed to showcase developer talent with a high-end "Glow & Glass" aesthetic, inspired by modern design standards like those of Brittany Chiang.
@@ -89,7 +91,9 @@ All content is located in `src/static-data/`:
 | Command | Result |
 | :--- | :--- |
 | `npm run dev` | Starts development server at `localhost:3000` |
+<!-- STORYBOOK (commented out — not ready to expose yet)
 | `npm run storybook` | Starts Storybook at `localhost:6006` |
+-->
 | `npm run build` | Optimizes and builds for production |
 
 | `npm run lint` | Checks for code quality and stylistic errors |
@@ -127,7 +131,9 @@ We welcome contributions! To get started:
 - 🎨 [Theme System & Guidelines](./docs/THEME_SYSTEM.md)
 - 📋 [Feature Specifications](./docs/FEATURES.md)
 - 🏁 [Project Roadmap](./docs/ROADMAP.md)
+<!-- STORYBOOK (commented out — not ready to expose yet)
 - 🎨 [Storybook Guide](./docs/STORYBOOK.md)
+-->
 
 
 ---
