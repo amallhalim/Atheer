@@ -20,11 +20,21 @@ To build a static version of Storybook (useful for deployment or sharing documen
 
 ```bash
 npm run build-storybook
+# or
+npx storybook build
 ```
 
 The output will be in the `storybook-static/` directory.
 
----
+### When to use this command?
+You should run the build command in the following scenarios:
+1.  **Deployment**: When you want to host your Storybook as a live website (e.g., on Vercel, Netlify, or GitHub Pages).
+2.  **Sharing**: When you need to show your components to someone (like a designer or manager) who doesn't have the project running locally.
+3.  **CI/CD Pipeline**: To automatically update your hosted documentation whenever you merge code.
+4.  **Testing**: For tools that require a built version of Storybook (e.g., Chromatic for visual regression testing).
+5.  **Offline Reference**: If you want to keep a permanent, searchable version of your documentation that doesn't require a development server.
+
+--- 
 
 ## 📁 Directory Structure
 
