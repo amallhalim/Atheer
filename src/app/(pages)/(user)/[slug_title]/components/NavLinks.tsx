@@ -57,6 +57,11 @@ export default function NavLinks() {
         return () => observer.disconnect();
     }, [links]);
 
+
+
+
+
+
     return (
         <nav aria-label="In-page jump links">
             <ul className='space-y-4'>
