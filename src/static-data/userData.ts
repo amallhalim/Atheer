@@ -9,17 +9,16 @@ export const userData: UserData = {
     links: [
         {
             name: "github",
-            url: "https://github.com/amalhalim"
+            url: "https://github.com/amallhalim"
         },
         {
             name: "linkedin",
-            url: "https://linkedin.com/in/amalhalim"
+            url: "https://www.linkedin.com/in/amal-halim"
         },
-
 
         {
             name: "email",
-            url: "mailto:[EMAIL_ADDRESS]"
+            url: "mailto:amalhalim888@gmail.com"
         },
         // {
         //     name: "facebook",
