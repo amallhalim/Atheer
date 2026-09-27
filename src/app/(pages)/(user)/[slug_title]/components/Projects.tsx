@@ -1,6 +1,8 @@
 "use client"
 import React from 'react'
+import { ArrowUpRight } from 'lucide-react'
 import HoverImage from '@/components/image/HoverImage';
+import Button from '@/components/button/Button';
 import PROJECTS from '@/static-data/Projects';
 import { Project } from '@/types';
 import TechLabel from '@/components/label/TechLabel';
@@ -11,12 +13,20 @@ const ProjectCard = ({ project }: { project: Project }) => {
     const hasMultipleImages = project.images.length > 1;
 
     return (
-        <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
+        <div
             className="group relative flex flex-col lg:flex-row gap-8 p-6 rounded-3xl transition-all duration-500 hover:bg-muted/30 border border-transparent hover:border-border"
         >
+            {/* Stretched link: whole card is clickable when the project has a live link */}
+            {project.link && (
+                <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${project.title} website`}
+                    className="absolute inset-0 rounded-3xl z-0"
+                />
+            )}
+
             {/* Subtle glow effect on hover */}
             <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
             {/* Gallery Section */}
@@ -61,13 +71,32 @@ const ProjectCard = ({ project }: { project: Project }) => {
                         {project.description}
                     </p>
                 </div>
-                <div className="mt-auto flex flex-wrap gap-2">
+                <div className="mt-auto flex flex-wrap items-center gap-2">
                     {project.tech.map((t) => (
                         <TechLabel key={t} skill={t} />
                     ))}
+                    {project.caseStudy && (
+                        <a
+                            href={project.caseStudy}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative z-10 ml-auto"
+                            aria-label={`View the ${project.title} case study`}
+                        >
+                            <Button
+                                label="View case study"
+                                icon={<ArrowUpRight />}
+                                iconPlacement="right"
+                                variant="glass"
+                                color="primary"
+                                size="sm"
+                                rounded="lg"
+                            />
+                        </a>
+                    )}
                 </div>
             </div>
-        </a>
+        </div>
     );
 };
 

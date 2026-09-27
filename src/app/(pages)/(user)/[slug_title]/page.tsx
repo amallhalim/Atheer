@@ -3,6 +3,7 @@ import ShortBio from './components/ShortBio'
 import NameSection from './components/NameSection'
 import NavLinks from './components/NavLinks'
 import ExperienceSection from './components/ExperienceSection'
+import SkillsSection from './components/SkillsSection'
 import Projects from './components/Projects'
 import SocialLinks from './components/SocialLinks'
 import { HiOutlineArrowDownTray } from "react-icons/hi2";
@@ -46,6 +47,9 @@ export default function UserProfile() {
                 </div>
                 <div className="fade-in-bottom anim-delay-600">
                     <Projects />
+                </div>
+                <div className="fade-in-bottom anim-delay-700">
+                    <SkillsSection />
                 </div>
             </div>
         </div>
