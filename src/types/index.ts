@@ -5,6 +5,7 @@ export interface Project {
     description: string;
     tech: string[];
     link: string;
+    caseStudy?: string;
     images: (StaticImageData | string)[];
     year: string;
     type: string;

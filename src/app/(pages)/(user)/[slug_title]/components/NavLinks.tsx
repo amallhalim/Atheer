@@ -6,7 +6,8 @@ export default function NavLinks() {
     const links = useMemo(() => [
         { name: 'About', id: 'shortBio' },
         { name: 'Experience', id: 'experienceSection' },
-        { name: 'Projects', id: 'projects' }
+        { name: 'Projects', id: 'projects' },
+        { name: 'Skills', id: 'skillsSection' }
     ], []);
 
     const [active, setActive] = useState('About');
